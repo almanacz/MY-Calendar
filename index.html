@@ -3,297 +3,1604 @@
 
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-  <title>MY Calendar</title>
+    <title>MY Calendar</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <script src="external/jquery-3.5.1.js"></script>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap core JavaScript -->
+    <!--<script src="vendor/jquery/jquery.min.js"></script>-->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom styles for this template -->
+    <link href="css/modern-business.css" rel="stylesheet">
 
-  <!-- Custom styles for this template -->
-  <link href="css/modern-business.css" rel="stylesheet">
-  
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176057130-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
+    <!--<script src="external/js-year-calendar.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="external/js-year-calendar.css" />
+    <script src="external/bootstrap-year-calendar.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="external/bootstrap-year-calendar.css" />-->
 
-	  gtag('config', 'UA-176057130-1');
-	</script>
+    <link rel="stylesheet" href="external/font-awesome.css" />
+
+    <script type="text/javascript">
+        var items = [
+            {
+                "year": "2021",
+                "date": "1-Jan",
+                "day": "Fri",
+                "description": "New Year's Day",
+                "state": "National except Johor, Kedah, Kelantan, Perlis & Terengganu",
+                "startDate": "2021-01-01",
+                "endDate": "2021-01-01",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "14-Jan",
+                "day": "Thu",
+                "description": "YDPB Negeri Sembilan's Birthday",
+                "state": "Negeri Sembilan",
+                "startDate": "2021-01-14",
+                "endDate": "2021-01-14",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "28-Jan",
+                "day": "Thu",
+                "description": "Thaipusam",
+                "state": "Johor, Kuala Lumpur, Negeri Sembilan, Penang, Perak, Putrajaya & Selangor",
+                "startDate": "2021-01-28",
+                "endDate": "2021-01-28",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "1-Feb",
+                "day": "Mon",
+                "description": "Federal Territory Day",
+                "state": "Kuala Lumpur, Labuan & Putrajaya",
+                "startDate": "2021-02-01",
+                "endDate": "2021-02-01",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "12-Feb",
+                "day": "Fri",
+                "description": "Chinese New Year",
+                "state": "National",
+                "startDate": "2021-02-12",
+                "endDate": "2021-02-12",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "13-Feb",
+                "day": "Sat",
+                "description": "Chinese New Year Holiday",
+                "state": "National",
+                "startDate": "2021-02-13",
+                "endDate": "2021-02-13",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "4-Mar",
+                "day": "Thu",
+                "description": "Installation of Sultan Terengganu",
+                "state": "Terengganu",
+                "startDate": "2021-03-04",
+                "endDate": "2021-03-04",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "11-Mar",
+                "day": "Thu",
+                "description": "Israk and Mikraj",
+                "state": "Kedah, Negeri Sembilan, Perlis & Terengganu",
+                "startDate": "2021-03-11",
+                "endDate": "2021-03-11",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "23-Mar",
+                "day": "Tue",
+                "description": "Sultan of Johor's Birthday",
+                "state": "Johor",
+                "startDate": "2021-03-23",
+                "endDate": "2021-03-23",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "2-Apr",
+                "day": "Fri",
+                "description": "Good Friday",
+                "state": "Sabah & Sarawak",
+                "startDate": "2021-04-02",
+                "endDate": "2021-04-02",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "13-Apr",
+                "day": "Tue",
+                "description": "Awal Ramadan",
+                "state": "Johor, Kedah & Melaka",
+                "startDate": "2021-04-13",
+                "endDate": "2021-04-13",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "15-Apr",
+                "day": "Thu",
+                "description": "Declaration of Melaka as a Historical City",
+                "state": "Melaka",
+                "startDate": "2021-04-15",
+                "endDate": "2021-04-15",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "26-Apr",
+                "day": "Mon",
+                "description": "Sultan of Terengganu's Birthday",
+                "state": "Terengganu",
+                "startDate": "2021-04-26",
+                "endDate": "2021-04-26",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "29-Apr",
+                "day": "Thu",
+                "description": "Nuzul Al-Quran",
+                "state": "National except Johor, Kedah, Melaka, Negeri Sembilan, Sabah & Sarawak",
+                "startDate": "2021-04-29",
+                "endDate": "2021-04-29",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "1-May",
+                "day": "Sat",
+                "description": "Labour Day",
+                "state": "National",
+                "startDate": "2021-05-01",
+                "endDate": "2021-05-01",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "13-May",
+                "day": "Thu",
+                "description": "Hari Raya Aidilfitri",
+                "state": "National",
+                "startDate": "2021-05-13",
+                "endDate": "2021-05-13",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "14-May",
+                "day": "Fri",
+                "description": "Hari Raya Aidilfitri Holiday",
+                "state": "National",
+                "startDate": "2021-05-14",
+                "endDate": "2021-05-14",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "22-May",
+                "day": "Sat",
+                "description": "Hari Hol Pahang",
+                "state": "Pahang",
+                "startDate": "2021-05-22",
+                "endDate": "2021-05-22",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "26-May",
+                "day": "Wed",
+                "description": "Wesak Day",
+                "state": "National",
+                "startDate": "2021-05-26",
+                "endDate": "2021-05-26",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "30-May",
+                "day": "Sun",
+                "description": "Harvest Festival",
+                "state": "Labuan & Sabah",
+                "startDate": "2021-05-30",
+                "endDate": "2021-05-30",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "31-May",
+                "day": "Mon",
+                "description": "Harvest Festival Holiday",
+                "state": "Labuan & Sabah",
+                "startDate": "2021-05-31",
+                "endDate": "2021-05-31",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "1-Jun",
+                "day": "Tue",
+                "description": "Hari Gawai",
+                "state": "Sarawak",
+                "startDate": "2021-06-01",
+                "endDate": "2021-06-01",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "2-Jun",
+                "day": "Wed",
+                "description": "Hari Gawai Holiday",
+                "state": "Sarawak",
+                "startDate": "2021-06-02",
+                "endDate": "2021-06-02",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "7-Jun",
+                "day": "Mon",
+                "description": "Agong's Birthday",
+                "state": "National",
+                "startDate": "2021-06-07",
+                "endDate": "2021-06-07",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "20-Jun",
+                "day": "Sun",
+                "description": "Sultan of Kedah's Birthday",
+                "state": "Kedah",
+                "startDate": "2021-06-20",
+                "endDate": "2021-06-20",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "7-Jul",
+                "day": "Wed",
+                "description": "Georgetown World Heritage City Day",
+                "state": "Penang",
+                "startDate": "2021-07-07",
+                "endDate": "2021-07-07",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "10-Jul",
+                "day": "Sat",
+                "description": "Penang Governor's Birthday",
+                "state": "Penang",
+                "startDate": "2021-07-10",
+                "endDate": "2021-07-10",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "17-Jul",
+                "day": "Sat",
+                "description": "Raja Perlis' Birthday",
+                "state": "Perlis",
+                "startDate": "2021-07-17",
+                "endDate": "2021-07-17",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "19-Jul",
+                "day": "Mon",
+                "description": "Arafat Day",
+                "state": "Terengganu",
+                "startDate": "2021-07-19",
+                "endDate": "2021-07-19",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "20-Jul",
+                "day": "Tue",
+                "description": "Hari Raya Haji",
+                "state": "National",
+                "startDate": "2021-07-20",
+                "endDate": "2021-07-20",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "21-Jul",
+                "day": "Wed",
+                "description": "Hari Raya Haji Holiday",
+                "state": "Kedah, Kelantan, Perlis & Terengganu",
+                "startDate": "2021-07-21",
+                "endDate": "2021-07-21",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "22-Jul",
+                "day": "Thu",
+                "description": "Sarawak Day",
+                "state": "Sarawak",
+                "startDate": "2021-07-22",
+                "endDate": "2021-07-22",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "30-Jul",
+                "day": "Fri",
+                "description": "Sultan of Pahang's Birthday",
+                "state": "Pahang",
+                "startDate": "2021-07-30",
+                "endDate": "2021-07-30",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "10-Aug",
+                "day": "Tue",
+                "description": "Awal Muharram",
+                "state": "National",
+                "startDate": "2021-08-10",
+                "endDate": "2021-08-10",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "31-Aug",
+                "day": "Tue",
+                "description": "Merdeka Day",
+                "state": "National",
+                "startDate": "2021-08-31",
+                "endDate": "2021-08-31",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "13-Sep",
+                "day": "Mon",
+                "description": "Hari Hol Almarhum Sultan Iskandar",
+                "state": "Johor",
+                "startDate": "2021-09-13",
+                "endDate": "2021-09-13",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "16-Sep",
+                "day": "Thu",
+                "description": "Malaysia Day",
+                "state": "National",
+                "startDate": "2021-09-16",
+                "endDate": "2021-09-16",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "2-Oct",
+                "day": "Sat",
+                "description": "Sabah Governor's Birthday",
+                "state": "Sabah",
+                "startDate": "2021-10-02",
+                "endDate": "2021-10-02",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "8-Oct",
+                "day": "Fri",
+                "description": "Melaka Governor's Birthday",
+                "state": "Melaka",
+                "startDate": "2021-10-08",
+                "endDate": "2021-10-08",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "9-Oct",
+                "day": "Sat",
+                "description": "Sarawak Governor's Birthday",
+                "state": "Sarawak",
+                "startDate": "2021-10-09",
+                "endDate": "2021-10-09",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "19-Oct",
+                "day": "Tue",
+                "description": "Prophet Muhammad's Birthday",
+                "state": "National",
+                "startDate": "2021-10-19",
+                "endDate": "2021-10-19",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "4-Nov",
+                "day": "Thu",
+                "description": "Deepavali",
+                "state": "National except Sarawak",
+                "startDate": "2021-11-04",
+                "endDate": "2021-11-04",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "5-Nov",
+                "day": "Fri",
+                "description": "Sultan of Perak's Birthday",
+                "state": "Perak",
+                "startDate": "2021-11-05",
+                "endDate": "2021-11-05",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "11-Nov",
+                "day": "Thu",
+                "description": "Sultan of Kelantan's Birthday",
+                "state": "Kelantan",
+                "startDate": "2021-11-11",
+                "endDate": "2021-11-11",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "12-Nov",
+                "day": "Fri",
+                "description": "Sultan of Kelantan's Birthday Holiday",
+                "state": "Kelantan",
+                "startDate": "2021-11-12",
+                "endDate": "2021-11-12",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "11-Dec",
+                "day": "Sat",
+                "description": "Sultan of Selangor's Birthday",
+                "state": "Selangor",
+                "startDate": "2021-12-11",
+                "endDate": "2021-12-11",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "24-Dec",
+                "day": "Fri",
+                "description": "Christmas Eve",
+                "state": "Sabah",
+                "startDate": "2021-12-24",
+                "endDate": "2021-12-24",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "25-Dec",
+                "day": "Sat",
+                "description": "Christmas Day",
+                "state": "National",
+                "startDate": "2021-12-25",
+                "endDate": "2021-12-25",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "start": "20-Jan (Wed)",
+                "end": "",
+                "day": "",
+                "description": "First day of School",
+                "state": "National",
+                "startDate": "2021-01-20",
+                "endDate": "2021-01-20",
+                "color": "#9cb703"
+            },
+            {
+                "year": "2021",
+                "start": "26-Mar (Fri)",
+                "end": "4-Apr (Sun)",
+                "day": "",
+                "description": "Term 1",
+                "state": "National",
+                "startDate": "2021-03-26",
+                "endDate": "2021-04-03",
+                "color": "#9cb703"
+            },
+            {
+                "year": "2021",
+                "start": "28-May (Fri)",
+                "end": "13-Jun (Sun)",
+                "day": "",
+                "description": "Mid Year",
+                "state": "National",
+                "startDate": "2021-05-28",
+                "endDate": "2021-06-12",
+                "color": "#9cb703"
+            },
+            {
+                "year": "2021",
+                "start": "16-Jul (Fri)",
+                "end": "25-Jul (Sun)",
+                "day": "",
+                "description": "Mid Term",
+                "state": "National",
+                "startDate": "2021-07-16",
+                "endDate": "2021-07-24",
+                "color": "#9cb703"
+            },
+            {
+                "year": "2021",
+                "start": "10-Sept (Fri)",
+                "end": "19-Sept (Sun)",
+                "day": "",
+                "description": "Mid Term",
+                "state": "National",
+                "startDate": "2021-09-10",
+                "endDate": "2021-09-18",
+                "color": "#9cb703"
+            },
+            {
+                "year": "2021",
+                "start": "10-Dec (Fri)",
+                "end": "31-Dec (Fri)",
+                "day": "",
+                "description": "End of Year",
+                "state": "National",
+                "startDate": "2021-12-10",
+                "endDate": "2021-12-31",
+                "color": "#9cb703"
+            }
+        ];
+
+        var ph = [
+            {
+                "year": "2021",
+                "date": "1-Jan",
+                "day": "Fri",
+                "description": "New Year's Day",
+                "state": "National except Johor, Kedah, Kelantan, Perlis & Terengganu",
+                "startDate": "2021-01-01",
+                "endDate": "2021-01-01",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "14-Jan",
+                "day": "Thu",
+                "description": "YDPB Negeri Sembilan's Birthday",
+                "state": "Negeri Sembilan",
+                "startDate": "2021-01-14",
+                "endDate": "2021-01-14",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "28-Jan",
+                "day": "Thu",
+                "description": "Thaipusam",
+                "state": "Johor, Kuala Lumpur, Negeri Sembilan, Penang, Perak, Putrajaya & Selangor",
+                "startDate": "2021-01-28",
+                "endDate": "2021-01-28",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "1-Feb",
+                "day": "Mon",
+                "description": "Federal Territory Day",
+                "state": "Kuala Lumpur, Labuan & Putrajaya",
+                "startDate": "2021-02-01",
+                "endDate": "2021-02-01",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "12-Feb",
+                "day": "Fri",
+                "description": "Chinese New Year",
+                "state": "National",
+                "startDate": "2021-02-12",
+                "endDate": "2021-02-12",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "13-Feb",
+                "day": "Sat",
+                "description": "Chinese New Year Holiday",
+                "state": "National",
+                "startDate": "2021-02-13",
+                "endDate": "2021-02-13",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "4-Mar",
+                "day": "Thu",
+                "description": "Installation of Sultan Terengganu",
+                "state": "Terengganu",
+                "startDate": "2021-03-04",
+                "endDate": "2021-03-04",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "11-Mar",
+                "day": "Thu",
+                "description": "Israk and Mikraj",
+                "state": "Kedah, Negeri Sembilan, Perlis & Terengganu",
+                "startDate": "2021-03-11",
+                "endDate": "2021-03-11",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "23-Mar",
+                "day": "Tue",
+                "description": "Sultan of Johor's Birthday",
+                "state": "Johor",
+                "startDate": "2021-03-23",
+                "endDate": "2021-03-23",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "2-Apr",
+                "day": "Fri",
+                "description": "Good Friday",
+                "state": "Sabah & Sarawak",
+                "startDate": "2021-04-02",
+                "endDate": "2021-04-02",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "13-Apr",
+                "day": "Tue",
+                "description": "Awal Ramadan",
+                "state": "Johor, Kedah & Melaka",
+                "startDate": "2021-04-13",
+                "endDate": "2021-04-13",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "15-Apr",
+                "day": "Thu",
+                "description": "Declaration of Melaka as a Historical City",
+                "state": "Melaka",
+                "startDate": "2021-04-15",
+                "endDate": "2021-04-15",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "26-Apr",
+                "day": "Mon",
+                "description": "Sultan of Terengganu's Birthday",
+                "state": "Terengganu",
+                "startDate": "2021-04-26",
+                "endDate": "2021-04-26",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "29-Apr",
+                "day": "Thu",
+                "description": "Nuzul Al-Quran",
+                "state": "National except Johor, Kedah, Melaka, Negeri Sembilan, Sabah & Sarawak",
+                "startDate": "2021-04-29",
+                "endDate": "2021-04-29",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "1-May",
+                "day": "Sat",
+                "description": "Labour Day",
+                "state": "National",
+                "startDate": "2021-05-01",
+                "endDate": "2021-05-01",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "13-May",
+                "day": "Thu",
+                "description": "Hari Raya Aidilfitri",
+                "state": "National",
+                "startDate": "2021-05-13",
+                "endDate": "2021-05-13",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "14-May",
+                "day": "Fri",
+                "description": "Hari Raya Aidilfitri Holiday",
+                "state": "National",
+                "startDate": "2021-05-14",
+                "endDate": "2021-05-14",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "22-May",
+                "day": "Sat",
+                "description": "Hari Hol Pahang",
+                "state": "Pahang",
+                "startDate": "2021-05-22",
+                "endDate": "2021-05-22",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "26-May",
+                "day": "Wed",
+                "description": "Wesak Day",
+                "state": "National",
+                "startDate": "2021-05-26",
+                "endDate": "2021-05-26",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "30-May",
+                "day": "Sun",
+                "description": "Harvest Festival",
+                "state": "Labuan & Sabah",
+                "startDate": "2021-05-30",
+                "endDate": "2021-05-30",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "31-May",
+                "day": "Mon",
+                "description": "Harvest Festival Holiday",
+                "state": "Labuan & Sabah",
+                "startDate": "2021-05-31",
+                "endDate": "2021-05-31",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "1-Jun",
+                "day": "Tue",
+                "description": "Hari Gawai",
+                "state": "Sarawak",
+                "startDate": "2021-06-01",
+                "endDate": "2021-06-01",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "2-Jun",
+                "day": "Wed",
+                "description": "Hari Gawai Holiday",
+                "state": "Sarawak",
+                "startDate": "2021-06-02",
+                "endDate": "2021-06-02",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "7-Jun",
+                "day": "Mon",
+                "description": "Agong's Birthday",
+                "state": "National",
+                "startDate": "2021-06-07",
+                "endDate": "2021-06-07",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "20-Jun",
+                "day": "Sun",
+                "description": "Sultan of Kedah's Birthday",
+                "state": "Kedah",
+                "startDate": "2021-06-20",
+                "endDate": "2021-06-20",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "7-Jul",
+                "day": "Wed",
+                "description": "Georgetown World Heritage City Day",
+                "state": "Penang",
+                "startDate": "2021-07-07",
+                "endDate": "2021-07-07",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "10-Jul",
+                "day": "Sat",
+                "description": "Penang Governor's Birthday",
+                "state": "Penang",
+                "startDate": "2021-07-10",
+                "endDate": "2021-07-10",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "17-Jul",
+                "day": "Sat",
+                "description": "Raja Perlis' Birthday",
+                "state": "Perlis",
+                "startDate": "2021-07-17",
+                "endDate": "2021-07-17",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "19-Jul",
+                "day": "Mon",
+                "description": "Arafat Day",
+                "state": "Terengganu",
+                "startDate": "2021-07-19",
+                "endDate": "2021-07-19",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "20-Jul",
+                "day": "Tue",
+                "description": "Hari Raya Haji",
+                "state": "National",
+                "startDate": "2021-07-20",
+                "endDate": "2021-07-20",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "21-Jul",
+                "day": "Wed",
+                "description": "Hari Raya Haji Holiday",
+                "state": "Kedah, Kelantan, Perlis & Terengganu",
+                "startDate": "2021-07-21",
+                "endDate": "2021-07-21",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "22-Jul",
+                "day": "Thu",
+                "description": "Sarawak Day",
+                "state": "Sarawak",
+                "startDate": "2021-07-22",
+                "endDate": "2021-07-22",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "30-Jul",
+                "day": "Fri",
+                "description": "Sultan of Pahang's Birthday",
+                "state": "Pahang",
+                "startDate": "2021-07-30",
+                "endDate": "2021-07-30",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "10-Aug",
+                "day": "Tue",
+                "description": "Awal Muharram",
+                "state": "National",
+                "startDate": "2021-08-10",
+                "endDate": "2021-08-10",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "31-Aug",
+                "day": "Tue",
+                "description": "Merdeka Day",
+                "state": "National",
+                "startDate": "2021-08-31",
+                "endDate": "2021-08-31",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "13-Sep",
+                "day": "Mon",
+                "description": "Hari Hol Almarhum Sultan Iskandar",
+                "state": "Johor",
+                "startDate": "2021-09-13",
+                "endDate": "2021-09-13",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "16-Sep",
+                "day": "Thu",
+                "description": "Malaysia Day",
+                "state": "National",
+                "startDate": "2021-09-16",
+                "endDate": "2021-09-16",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "2-Oct",
+                "day": "Sat",
+                "description": "Sabah Governor's Birthday",
+                "state": "Sabah",
+                "startDate": "2021-10-02",
+                "endDate": "2021-10-02",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "8-Oct",
+                "day": "Fri",
+                "description": "Melaka Governor's Birthday",
+                "state": "Melaka",
+                "startDate": "2021-10-08",
+                "endDate": "2021-10-08",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "9-Oct",
+                "day": "Sat",
+                "description": "Sarawak Governor's Birthday",
+                "state": "Sarawak",
+                "startDate": "2021-10-09",
+                "endDate": "2021-10-09",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "19-Oct",
+                "day": "Tue",
+                "description": "Prophet Muhammad's Birthday",
+                "state": "National",
+                "startDate": "2021-10-19",
+                "endDate": "2021-10-19",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "4-Nov",
+                "day": "Thu",
+                "description": "Deepavali",
+                "state": "National except Sarawak",
+                "startDate": "2021-11-04",
+                "endDate": "2021-11-04",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "5-Nov",
+                "day": "Fri",
+                "description": "Sultan of Perak's Birthday",
+                "state": "Perak",
+                "startDate": "2021-11-05",
+                "endDate": "2021-11-05",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "11-Nov",
+                "day": "Thu",
+                "description": "Sultan of Kelantan's Birthday",
+                "state": "Kelantan",
+                "startDate": "2021-11-11",
+                "endDate": "2021-11-11",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "12-Nov",
+                "day": "Fri",
+                "description": "Sultan of Kelantan's Birthday Holiday",
+                "state": "Kelantan",
+                "startDate": "2021-11-12",
+                "endDate": "2021-11-12",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "11-Dec",
+                "day": "Sat",
+                "description": "Sultan of Selangor's Birthday",
+                "state": "Selangor",
+                "startDate": "2021-12-11",
+                "endDate": "2021-12-11",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "24-Dec",
+                "day": "Fri",
+                "description": "Christmas Eve",
+                "state": "Sabah",
+                "startDate": "2021-12-24",
+                "endDate": "2021-12-24",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2021",
+                "date": "25-Dec",
+                "day": "Sat",
+                "description": "Christmas Day",
+                "state": "National",
+                "startDate": "2021-12-25",
+                "endDate": "2021-12-25",
+                "color": "#ff4a32"
+            }
+        ]
+
+        var shA = [
+            {
+                "year": "2021",
+                "start": "20-Jan (Wed)",
+                "end": "",
+                "day": "",
+                "description": "First day of School",
+                "state": "National",
+                "startDate": "2021-01-20",
+                "endDate": "2021-01-20",
+                "color": "#9cb703"
+            },
+            {
+                "year": "2021",
+                "start": "26-Mar (Fri)",
+                "end": "3-Apr (Sat)",
+                "day": "",
+                "description": "Term 1",
+                "state": "National",
+                "startDate": "2021-03-26",
+                "endDate": "2021-04-03",
+                "color": "#9cb703"
+            },
+            {
+                "year": "2021",
+                "start": "28-May (Fri)",
+                "end": "12-Jun (Sat)",
+                "day": "",
+                "description": "Mid Year",
+                "state": "National",
+                "startDate": "2021-05-28",
+                "endDate": "2021-06-12",
+                "color": "#9cb703"
+            },
+            {
+                "year": "2021",
+                "start": "16-Jul (Fri)",
+                "end": "24-Jul (Sat)",
+                "day": "",
+                "description": "Mid Term",
+                "state": "National",
+                "startDate": "2021-07-16",
+                "endDate": "2021-07-24",
+                "color": "#9cb703"
+            },
+            {
+                "year": "2021",
+                "start": "10-Sept (Fri)",
+                "end": "18-Sept (Sat)",
+                "day": "",
+                "description": "Mid Term",
+                "state": "National",
+                "startDate": "2021-09-10",
+                "endDate": "2021-09-18",
+                "color": "#9cb703"
+            },
+            {
+                "year": "2021",
+                "start": "10-Dec (Fri)",
+                "end": "31-Dec (Fri)",
+                "day": "",
+                "description": "End of Year",
+                "state": "National",
+                "startDate": "2021-12-10",
+                "endDate": "2021-12-31",
+                "color": "#9cb703"
+            }
+
+        ]
+
+        var shB = [
+            {
+                "year": "2021",
+                "start": "20-Jan (Wed)",
+                "end": "",
+                "day": "",
+                "description": "First day of School",
+                "state": "National",
+                "startDate": "2021-01-20",
+                "endDate": "2021-01-20",
+                "color": "green"
+            },
+            {
+                "year": "2021",
+                "start": "27-Mar (Sat)",
+                "end": "4-Apr (Sun)",
+                "day": "",
+                "description": "Term 1",
+                "state": "National",
+                "startDate": "2021-03-27",
+                "endDate": "2021-04-04",
+                "color": "green"
+            },
+            {
+                "year": "2021",
+                "start": "29-May (Sat)",
+                "end": "13-Jun (Sun)",
+                "day": "",
+                "description": "Mid Year",
+                "state": "National",
+                "startDate": "2021-05-29",
+                "endDate": "2021-06-13",
+                "color": "green"
+            },
+            {
+                "year": "2021",
+                "start": "17-Jul (Sat)",
+                "end": "25-Jul (Sun)",
+                "day": "",
+                "description": "Mid Term",
+                "state": "National",
+                "startDate": "2021-07-17",
+                "endDate": "2021-07-25",
+                "color": "green"
+            },
+            {
+                "year": "2021",
+                "start": "11-Sept (Fri)",
+                "end": "19-Sept (Sun)",
+                "day": "",
+                "description": "Mid Term",
+                "state": "National",
+                "startDate": "2021-09-11",
+                "endDate": "2021-09-19",
+                "color": "green"
+            },
+            {
+                "year": "2021",
+                "start": "11-Dec (Sat)",
+                "end": "31-Dec (Fri)",
+                "day": "",
+                "description": "End of Year",
+                "state": "National",
+                "startDate": "2021-12-11",
+                "endDate": "2021-12-31",
+                "color": "green"
+            }
+
+        ]
+
+        $(document).ready(function () {
+
+            PopulateTable('ph');
+
+            $(function () {
+
+                $('#calendar').calendar({
+                    mouseOnDay: function (e) {
+                    if (e.events.length > 0) {
+                        var content = '';
+
+                        for (var i in e.events) {
+                            content += '<div class="event-tooltip-content">'
+                                + '<div class="event-name">' + e.events[i].description + ' (' + e.events[i].state + ')</div>'
+                                //+ '<div class="event-location">' + e.events[i].state + '</div>'
+                                + '</div>';
+                        }
+
+                        $(e.element).popover({
+                            trigger: 'manual',
+                            container: 'body',
+                            html: true,
+                            content: content
+                        });
+
+                        $(e.element).popover('show');
+                    }
+                },
+                mouseOutDay: function (e) {
+                    if (e.events.length > 0) {
+                        $(e.element).popover('hide');
+                    }
+                },
+                dayContextMenu: function (e) {
+                    $(e.element).popover('hide');
+                },
+                    dataSource: calendarData(items)
+                });
+            })
+
+        })
+
+        getAvailability = function () {
+            var dataSource = calendarData(items);
+            console.log(dataSource);
+            //$('#calendar').data('calendar').setDataSource(data);
+            //$.getJSON('Data/MY.json', function (data) {
+            //    myItems = data.items;
+            //    console.log(myItems);
+            //    var dataSource = calendarData(myItems);
+            //    $('#calendar').data('calendar').setDataSource(dataSource);
+            //});
+            //$.ajax({
+            //    url: "{% url 'get-availability' %}",
+            //    method: "GET",
+            //    cache: false,
+            //    data: { pk: "{{object.pk}}", business_type: "{{object.business_type}}" },
+            //    dataType: "json",
+            //    success: function (response) {
+            //        var data = $.parseJSON(response.availabilities);
+            //        console.info(data);
+            //        var dataSource = calendarData(data);
+            //        $('#calendar').data('calendar').setDataSource(dataSource);
+            //    }
+            //})
+        };
+
+        function calendarData(data) {
+            var dataSource = [];
+            for (var i = 0; i < data.length; i++) {
+                var s = new Date(data[i].startDate);
+                var e = new Date(data[i].endDate);
+
+                var s_year = s.getFullYear(),
+                    s_month = s.getMonth(),
+                    s_day = s.getDay();
+                var e_year = e.getFullYear(),
+                    e_month = e.getMonth(),
+                    e_day = e.getDay();
+
+                dataSource.push({
+                    year: data[i].year,
+                    date: data[i].date,
+                    day: data[i].day,
+                    description: data[i].description,
+                    state: data[i].state,
+                    color: data[i].color,
+                    startDate: new Date(s_year, s_month, s_day),
+                    endDate: new Date(e_year, e_month, e_day)
+                })
+            }
+            return dataSource;
+        }
 
 
+        function getDefaultOffDays2(year) {
+            var date = new Date(year, 0, 1);
+            while (date.getDay() != 0) {
+                date.setDate(date.getDate() + 1);
+            }
+            var days = [];
+            while (date.getFullYear() == year) {
+                var m = date.getMonth() + 1;
+                var d = date.getDate();
+                days.push(
+                    year + '-' +
+                    (m < 10 ? '0' + m : m) + '-' +
+                    (d < 10 ? '0' + d : d)
+                );
+                date.setDate(date.getDate() + 7);
+            }
+            return days;
+        }
+
+        function PopulateTable(which) {
+            //$("#" + which).closest("li").css({ "color": "blue" });
+            //$("#" + which).siblings("li").css({ "color": "#116466" });
+
+            var myItems;
+            var strBody = '', strHeader = '';
+
+
+            if (which == 'ph') {
+                $('#phList thead').empty();
+                $('#phList tbody').empty();
+
+                strHeader += '<tr><th>Date</th><th>Day</th><th>Holiday</th><th>State(s)</th></tr >';
+                $('#phList thead').append(strHeader);
+
+                $.each(ph, function (i, v) {
+                    strBody += '<tr>';
+                    strBody += '<td>' + v.date + '</td>';
+                    strBody += '<td>' + v.day + '</td>';
+                    strBody += '<td>' + v.description + '</td>';
+                    strBody += '<td>' + v.state + '</td>';
+                    strBody += '</tr>';
+                })
+
+                $('#phList tbody').append(strBody);
+
+                //$.getJSON('../Data/MY2021-PH.json', function (data) {
+                //    myItems = data.items;
+
+                //    $.each(myItems, function (i, v) {
+                //        strBody += '<tr>';
+                //        strBody += '<td>' + v.date + '</td>';
+                //        strBody += '<td>' + v.day + '</td>';
+                //        strBody += '<td>' + v.description + '</td>';
+                //        strBody += '<td>' + v.state + '</td>';
+                //        strBody += '</tr>';
+                //    })
+
+                //    $('#phList tbody').append(strBody);
+                //})
+            }
+            else if (which == 'shA') {
+                $('#shAList thead').empty();
+                $('#shAList tbody').empty();
+
+                strHeader += '<tr><th>Description</th><th>Start</th><th>End</th></tr>';
+                $('#shAList thead').append(strHeader);
+
+                $.each(shA, function (i, v) {
+                    strBody += '<tr>';
+                    strBody += '<td>' + v.description + '</td>';
+                    strBody += '<td>' + v.start + '</td>';
+                    strBody += '<td>' + v.end + '</td>';
+                    strBody += '</tr>';
+                })
+
+                $('#shAList tbody').append(strBody);
+
+                //$.getJSON('../Data/MY2021-SH-A.json', function (data) {
+                //    myItems = data.items;
+                //    $.each(myItems, function (i, v) {
+                //        strBody += '<tr>';
+                //        strBody += '<td>' + v.description + '</td>';
+                //        strBody += '<td>' + v.start + '</td>';
+                //        strBody += '<td>' + v.end + '</td>';
+                //        strBody += '</tr>';
+                //    })
+
+                //    $('#shAList tbody').append(strBody);
+                //})
+            }
+            else if (which == 'shB') {
+                $('#shBList thead').empty();
+                $('#shBList tbody').empty();
+
+                strHeader += '<tr><th>Description</th><th>Start</th><th>End</th></tr>';
+                $('#shBList thead').append(strHeader);
+
+                $.each(shB, function (i, v) {
+                    strBody += '<tr>';
+                    strBody += '<td>' + v.description + '</td>';
+                    strBody += '<td>' + v.start + '</td>';
+                    strBody += '<td>' + v.end + '</td>';
+                    strBody += '</tr>';
+                })
+
+                $('#shBList tbody').append(strBody);
+
+                //$.getJSON('../Data/MY2021-SH-B.json', function (data) {
+                //    myItems = data.items;
+                //    $.each(myItems, function (i, v) {
+                //        strBody += '<tr>';
+                //        strBody += '<td>' + v.description + '</td>';
+                //        strBody += '<td>' + v.start + '</td>';
+                //        strBody += '<td>' + v.end + '</td>';
+                //        strBody += '</tr>';
+                //    })
+
+                //    $('#shBList tbody').append(strBody);
+                //})
+            }
+        }
+
+
+    </script>
+
+    <style>
+        #calendar {
+            /*display: inline-block;
+        vertical-align: top;*/
+            -ms-overflow-style: none;
+        }
+
+            #calendar::-webkit-scrollbar {
+                display: none;
+            }
+
+        @media (min-width: 800px) {
+            /* CSS that should be displayed if width is equal to or less than 800px goes here */
+            #calendar {
+                position: fixed;
+                /*right: 0px;*/
+                top: 50px;
+                bottom: 20px;
+            }
+        }
+
+        .month-container {
+            margin-bottom: 50px !important;
+            margin-left: 50px !important;
+            /*color: #116466 !important;*/
+        }
+
+        .arrow-right {
+            width: 0;
+            height: 0;
+            border-top: 2px solid transparent;
+            border-bottom: 2px solid transparent;
+            border-left: 2px solid black;
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">MY Calendar</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="services.html">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Portfolio
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-              <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
-              <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
-              <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
-              <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
-              <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">MY Calendar</a>
+            <!--<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Portfolio
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                            <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
+                            <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
+                            <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
+                            <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
+                            <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Blog
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                            <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
+                            <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
+                            <a class="dropdown-item" href="blog-post.html">Blog Post</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Other Pages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPages">
+                            <a class="dropdown-item" href="full-width.html">Full Width Page</a>
+                            <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
+                            <a class="dropdown-item" href="faq.html">FAQ</a>
+                            <a class="dropdown-item" href="404.html">404</a>
+                            <a class="dropdown-item" href="pricing.html">Pricing Table</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>-->
+        </div>
+
+    </nav>
+
+    <!-- Page Content -->
+    <!--<div class="container">
+        <div class="col-sm-8">
+            <div class="col-sm-7" id="calendar"></div>
+        </div>
+
+    </div>-->
+    <div class="container-fluid" style="margin-top:10px">
+
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="col-sm-8" id="calendar"></div>
             </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Blog
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-              <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
-              <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
-              <a class="dropdown-item" href="blog-post.html">Blog Post</a>
+            <div class="col-sm-4" id="ph-list">
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button style="color:#ff4a32" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onclick="PopulateTable('ph');">
+                                    2021 Public Holiday
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                <table id="phList" class="table table-sm w-auto">
+                                    <thead></thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button style="color:#9cb703" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onclick="PopulateTable('shA');">
+                                    2021 School Holiday - Group A
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                <label>(Johor, Kedah, Kelantan, Terengganu)</label>
+                                <table id="shAList" class="table table-sm w-auto">
+                                    <thead></thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h5 class="mb-0">
+                                <button style="color:#9cb703" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" onclick="PopulateTable('shB');">
+                                    2021 School Holiday - Group B
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-body">
+                                <label>(Kuala Lumpur, Labuan, Melaka, Negeri Sembilan, Pahang, Perlis, Penang, Perak, Putrajaya, Sabah, Sarawak, Selangor)</label>
+                                <table id="shBList" class="table table-sm w-auto">
+                                    <thead></thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Other Pages
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPages">
-              <a class="dropdown-item" href="full-width.html">Full Width Page</a>
-              <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
-              <a class="dropdown-item" href="faq.html">FAQ</a>
-              <a class="dropdown-item" href="404.html">404</a>
-              <a class="dropdown-item" href="pricing.html">Pricing Table</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <header>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <!-- Slide One - Set the background image for this slide in the line below -->
-        <div class="carousel-item active" style="background-image: url('http://placehold.it/1900x1080')">
-          <div class="carousel-caption d-none d-md-block">
-            <h3>First Slide</h3>
-            <p>This is a description for the first slide.</p>
-          </div>
         </div>
-        <!-- Slide Two - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-          <div class="carousel-caption d-none d-md-block">
-            <h3>Second Slide</h3>
-            <p>This is a description for the second slide.</p>
-          </div>
-        </div>
-        <!-- Slide Three - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
-          <div class="carousel-caption d-none d-md-block">
-            <h3>Third Slide</h3>
-            <p>This is a description for the third slide.</p>
-          </div>
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  </header>
-
-  <!-- Page Content -->
-  <div class="container">
-
-    <h1 class="my-4">Welcome to Modern Business</h1>
-
-    <!-- Marketing Icons Section -->
-    <div class="row">
-      <div class="col-lg-4 mb-4">
-        <div class="card h-100">
-          <h4 class="card-header">Card Title</h4>
-          <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 mb-4">
-        <div class="card h-100">
-          <h4 class="card-header">Card Title</h4>
-          <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam eos, nam perspiciatis natus commodi similique totam consectetur praesentium molestiae atque exercitationem ut consequuntur, sed eveniet, magni nostrum sint fuga.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Learn More</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 mb-4">
-        <div class="card h-100">
-          <h4 class="card-header">Card Title</h4>
-          <div class="card-body">
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <!-- Portfolio Section -->
-    <h2>Portfolio Heading</h2>
-
-    <div class="row">
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project One</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Two</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Three</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos quisquam, error quod sed cumque, odio distinctio velit nostrum temporibus necessitatibus et facere atque iure perspiciatis mollitia recusandae vero vel quam!</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Four</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Five</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-6 portfolio-item">
-        <div class="card h-100">
-          <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
-          <div class="card-body">
-            <h4 class="card-title">
-              <a href="#">Project Six</a>
-            </h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque earum nostrum suscipit ducimus nihil provident, perferendis rem illo, voluptate atque, sit eius in voluptates, nemo repellat fugiat excepturi! Nemo, esse.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <!-- Features Section -->
-    <div class="row">
-      <div class="col-lg-6">
-        <h2>Modern Business Features</h2>
-        <p>The Modern Business template by Start Bootstrap includes:</p>
-        <ul>
-          <li>
-            <strong>Bootstrap v4</strong>
-          </li>
-          <li>jQuery</li>
-          <li>Font Awesome</li>
-          <li>Working contact form with validation</li>
-          <li>Unstyled page elements for easy customization</li>
-        </ul>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, omnis doloremque non cum id reprehenderit, quisquam totam aspernatur tempora minima unde aliquid ea culpa sunt. Reiciendis quia dolorum ducimus unde.</p>
-      </div>
-      <div class="col-lg-6">
-        <img class="img-fluid rounded" src="http://placehold.it/700x450" alt="">
-      </div>
-    </div>
-    <!-- /.row -->
-
-    <hr>
-
-    <!-- Call to Action Section -->
-    <div class="row mb-4">
-      <div class="col-md-8">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, expedita, saepe, vero rerum deleniti beatae veniam harum neque nemo praesentium cum alias asperiores commodi.</p>
-      </div>
-      <div class="col-md-4">
-        <a class="btn btn-lg btn-secondary btn-block" href="#">Call to Action</a>
-      </div>
     </div>
 
-  </div>
-  <!-- /.container -->
-
-  <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
-    </div>
     <!-- /.container -->
-  </footer>
+    <!-- Footer -->
+    <!--<footer class="py-5 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Your Website 2020</p>
+        </div>
+    </footer>-->
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
 </html>
+
+
