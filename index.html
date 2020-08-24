@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -1235,7 +1235,7 @@
                 dayContextMenu: function (e) {
                     $(e.element).popover('hide');
                 },
-                    dataSource: calendarData(items)
+                    dataSource: calendarData()
                 });
             })
 
@@ -1266,7 +1266,8 @@
             //})
         };
 
-        function calendarData(data) {
+        function calendarData() {
+            var data = items;
             var dataSource = [];
             for (var i = 0; i < data.length; i++) {
                 var s = new Date(data[i].startDate);
@@ -1274,10 +1275,10 @@
 
                 var s_year = s.getFullYear(),
                     s_month = s.getMonth(),
-                    s_day = s.getDay();
+                    s_day = s.getDate();
                 var e_year = e.getFullYear(),
                     e_month = e.getMonth(),
-                    e_day = e.getDay();
+                    e_day = e.getDate();
 
                 dataSource.push({
                     year: data[i].year,
@@ -1290,6 +1291,7 @@
                     endDate: new Date(e_year, e_month, e_day)
                 })
             }
+            //console.log(dataSource);
             return dataSource;
         }
 
