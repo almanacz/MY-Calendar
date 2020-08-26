@@ -21,480 +21,308 @@
 
 
     <script type="text/javascript">
+        
+        //var table = $('#example').DataTable({
+        //    "dom": '<"top"i>rt<"bottom"flp><"clear">'
+        //});
         $(document).ready(function () {
-            // Setup - add a text input to each footer cell
+            
+            //// Setup - add a text input to each footer cell
             $('#example tfoot th').each(function () {
                 var title = $('#example thead th').eq($(this).index()).text();
                 $(this).html('<input type="text" placeholder="Search ' + title + '" />');
-            }); // DataTable
+            });
+            //// DataTable
             var table = $('#example').DataTable({
                 //"bFilter": false,
                 "dom": '<"top"i>rt<"bottom"flp><"clear">'
             });
-            // Apply the search
+            //// Apply the search
             table.columns().eq(0).each(function (colIdx) {
                 $('input', table.column(colIdx).footer()).on('keyup change', function () { table.column(colIdx).search(this.value).draw(); });
             });
+            
+
+            refreshList();
         });
+
+        
+
+        function refreshList() {
+
+            $('#example').DataTable().destroy();
+
+            $('#example tbody').empty();
+
+            var selected = $('#ddlRowName').val();
+
+            var data = '';
+            data += '<tr><td>0</td><td>DATE</td><td>01/12</td><td>01/12</td><td>01/12</td><td>02/12</td><td>02/12</td><td>03/12</td><td>03/12</td><td>03/12</td><td>04/12</td><td>04/12</td><td>05/12</td><td>05/12</td><td>05/12</td><td>06/12</td><td>06/12</td><td>07/12</td><td>08/12</td><td>08/12</td><td>08/12</td><td>08/12</td><td>09/12</td><td>09/12</td><td>09/12</td><td>09/12</td><td>11/12</td><td>11/12</td><td>11/12</td><td>12/12</td><td>12/12</td><td>13/12</td><td>13/12</td><td>13/12</td><td>14/12</td><td>14/12</td><td>14/12</td><td>14/12</td><td>15/12</td><td>15/12</td><td>15/12</td><td>15/12</td><td></td></tr>';
+
+            data += '<tr><td>0</td><td>GROUP</td><td>1</td><td>1</td><td>2</td><td>1</td><td>2</td><td>1</td><td>3</td><td>3</td><td>1</td><td>1</td><td>1</td><td>2</td><td>2</td><td>4</td><td>4</td><td>5</td><td>1</td><td>2</td><td>3</td><td>4</td><td>1</td><td>1</td><td>2</td><td>3</td><td>1</td><td>1</td><td>2</td><td>3</td><td>4</td><td>1</td><td>4</td><td>4</td><td>1</td><td>2</td><td>3</td><td>4</td><td>1</td><td>2</td><td>3</td><td>4</td><td></td></tr>';
+            
+            data += '<tr><td>0</td><td>Chiller Running Hours</td><td>293</td><td>296</td><td>361</td><td>322</td><td>400</td><td>205</td><td>265</td><td>400</td><td>9</td><td>345</td><td>181</td><td>144</td><td>282</td><td>343</td><td>553</td><td>61</td><td>390</td><td>55</td><td>186</td><td>378</td><td>445</td><td>572</td><td>161</td><td>392</td><td>29</td><td>294</td><td>432</td><td>396</td><td>153</td><td>584</td><td>475</td><td>569</td><td>145</td><td>344</td><td>65</td><td>287</td><td>561</td><td>68</td><td>398</td><td>576</td><td></td></tr>';
+            
+            data += '<tr><td>0</td><td>AI4C</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td></td></tr>';
+           
+            
+            if (selected == '0') {
+                data += '<tr><td>1</td><td>Avg. Indoor (°C)</td><td>23.9140</td><td>20.2182</td><td>22.6096</td><td>17.8268</td><td>20.6530</td><td>24.5662</td><td>22.3922</td><td>20.0008</td><td>22.8270</td><td>24.3488</td><td>21.0878</td><td>25.8706</td><td>19.5660</td><td>18.0442</td><td>25.8706</td><td>18.2616</td><td>21.5226</td><td>21.9574</td><td>22.1748</td><td>19.7834</td><td>22.8270</td><td>24.7836</td><td>19.3486</td><td>18.9138</td><td>19.1312</td><td>22.6096</td><td>19.5660</td><td>19.7834</td><td>21.0878</td><td>23.4792</td><td>23.4792</td><td>18.6964</td><td>20.2182</td><td>20.2182</td><td>20.8704</td><td>23.4792</td><td>20.8704</td><td>21.3052</td><td>19.5660</td><td>23.6966</td><td>857.44</td></tr>';
+                data += '<tr><td>2</td><td>Avg. Indoor  RH%</td><td>59.8671</td><td>67.2581</td><td>81.3010</td><td>79.8228</td><td>71.6927</td><td>84.9965</td><td>79.0837</td><td>79.0837</td><td>75.3882</td><td>82.0401</td><td>63.5626</td><td>69.4754</td><td>83.5183</td><td>71.6927</td><td>79.8228</td><td>87.2138</td><td>81.3010</td><td>70.9536</td><td>84.9965</td><td>85.7356</td><td>62.8235</td><td>61.3453</td><td>73.9100</td><td>59.8671</td><td>78.3446</td><td>84.2574</td><td>84.2574</td><td>84.2574</td><td>70.2145</td><td>76.1273</td><td>64.3017</td><td>73.1709</td><td>70.2145</td><td>73.9100</td><td>62.8235</td><td>87.9529</td><td>87.9529</td><td>61.3453</td><td>67.9972</td><td>67.9972</td><td>2991.87</td></tr>';
+                data += '<tr><td>3</td><td>Avg. Specific Enthalpy (kJ/Kg)</td><td>60.4592</td><td>48.9928</td><td>61.5016</td><td>56.8108</td><td>50.5564</td><td>53.1624</td><td>42.2172</td><td>53.6836</td><td>57.8532</td><td>59.4168</td><td>62.5440</td><td>60.4592</td><td>58.8956</td><td>48.9928</td><td>43.7808</td><td>60.9804</td><td>41.6960</td><td>44.3020</td><td>45.8656</td><td>47.4292</td><td>55.2472</td><td>57.3320</td><td>53.1624</td><td>47.4292</td><td>54.2048</td><td>60.4592</td><td>45.8656</td><td>48.4716</td><td>61.5016</td><td>47.9504</td><td>45.8656</td><td>44.8232</td><td>53.1624</td><td>54.7260</td><td>58.8956</td><td>41.6960</td><td>54.2048</td><td>56.8108</td><td>43.7808</td><td>49.5140</td><td>2094.70</td></tr>';
+                data += '<tr><td>4</td><td>Avg. Dew Point (°C)</td><td>18.9840</td><td>14.4075</td><td>13.8990</td><td>16.9500</td><td>17.7975</td><td>16.9500</td><td>19.8315</td><td>14.0685</td><td>16.9500</td><td>15.7635</td><td>15.5940</td><td>18.9840</td><td>15.2550</td><td>14.7465</td><td>16.9500</td><td>19.4925</td><td>19.3230</td><td>17.6280</td><td>17.6280</td><td>14.7465</td><td>15.9330</td><td>14.5770</td><td>15.9330</td><td>16.6110</td><td>18.6450</td><td>18.3060</td><td>16.9500</td><td>19.6620</td><td>17.9670</td><td>20.1705</td><td>19.6620</td><td>15.2550</td><td>16.9500</td><td>19.3230</td><td>18.8145</td><td>15.0855</td><td>13.5600</td><td>20.0010</td><td>14.0685</td><td>18.9840</td><td>682.41</td></tr>';
+                
+            }
+            else if (selected == '1') {
+                data += '<tr><td>5</td><td>Avg. Outdoor DBT (°C)</td><td>24.0656</td><td>30.8256</td><td>22.4432</td><td>27.5808</td><td>31.9072</td><td>29.7440</td><td>25.1472</td><td>25.1472</td><td>29.4736</td><td>21.6320</td><td>32.1776</td><td>31.0960</td><td>30.0144</td><td>28.9328</td><td>27.5808</td><td>28.9328</td><td>27.3104</td><td>31.6368</td><td>26.7696</td><td>30.5552</td><td>27.0400</td><td>23.7952</td><td>29.7440</td><td>27.8512</td><td>22.4432</td><td>24.0656</td><td>21.6320</td><td>22.1728</td><td>26.7696</td><td>27.3104</td><td>26.2288</td><td>25.6880</td><td>30.8256</td><td>23.7952</td><td>27.0400</td><td>31.0960</td><td>29.2032</td><td>21.9024</td><td>28.3920</td><td>22.9840</td><td>1082.96</td></tr>';
+                data += '<tr><td>6</td><td>Avg. Indoor  RH%</td><td>85.9936</td><td>65.2630</td><td>69.8698</td><td>87.5292</td><td>69.1020</td><td>87.5292</td><td>67.5664</td><td>71.4054</td><td>76.0122</td><td>66.0308</td><td>88.2970</td><td>66.7986</td><td>83.6902</td><td>84.4580</td><td>71.4054</td><td>62.1918</td><td>75.2444</td><td>82.1546</td><td>82.1546</td><td>64.4952</td><td>88.2970</td><td>84.4580</td><td>62.1918</td><td>64.4952</td><td>79.8512</td><td>85.2258</td><td>76.0122</td><td>72.9410</td><td>81.3868</td><td>67.5664</td><td>89.8326</td><td>90.6004</td><td>85.9936</td><td>71.4054</td><td>74.4766</td><td>82.1546</td><td>65.2630</td><td>72.9410</td><td>63.7274</td><td>75.2444</td><td>3041.26</td></tr>';
+                data += '<tr><td>7</td><td>Avg. Specific Enthalpy (kJ/Kg)</td><td>76.6692</td><td>61.0514</td><td>75.9593</td><td>64.6009</td><td>70.2801</td><td>72.4098</td><td>78.7989</td><td>70.2801</td><td>77.3791</td><td>63.1811</td><td>70.9900</td><td>58.9217</td><td>65.3108</td><td>61.0514</td><td>71.6999</td><td>63.1811</td><td>57.5019</td><td>78.7989</td><td>78.7989</td><td>68.8603</td><td>70.9900</td><td>66.7306</td><td>73.1197</td><td>83.7682</td><td>57.5019</td><td>73.8296</td><td>82.3484</td><td>58.2118</td><td>77.3791</td><td>73.1197</td><td>73.8296</td><td>75.2494</td><td>75.9593</td><td>78.0890</td><td>67.4405</td><td>61.0514</td><td>57.5019</td><td>74.5395</td><td>73.8296</td><td>63.1811</td><td>2803.39</td></tr>';
+                data += '<tr><td>8</td><td>Avg. Dew Point (°C)</td><td>21.1017</td><td>25.8666</td><td>27.0011</td><td>18.3789</td><td>23.8245</td><td>26.7742</td><td>19.9672</td><td>26.3204</td><td>25.1859</td><td>21.3286</td><td>20.4210</td><td>20.8748</td><td>19.9672</td><td>21.1017</td><td>27.0011</td><td>23.1438</td><td>22.6900</td><td>22.6900</td><td>21.3286</td><td>23.1438</td><td>26.7742</td><td>20.4210</td><td>25.6397</td><td>19.0596</td><td>22.2362</td><td>24.5052</td><td>19.5134</td><td>21.5555</td><td>22.4631</td><td>25.4128</td><td>21.1017</td><td>22.4631</td><td>20.6479</td><td>24.0514</td><td>21.1017</td><td>26.3204</td><td>25.6397</td><td>26.3204</td><td>20.6479</td><td>26.7742</td><td>920.74</td></tr>';
+            }
+            else if (selected == '2') {
+                data += '<tr><td>9</td><td>D Avg. DBT (°C)</td><td>5.7240</td><td>5.1940</td><td>6.2010</td><td>6.2540</td><td>5.7240</td><td>4.7170</td><td>4.5050</td><td>6.2540</td><td>6.2540</td><td>5.8300</td><td>5.4060</td><td>5.6710</td><td>5.9360</td><td>4.5050</td><td>5.5650</td><td>5.1940</td><td>4.9820</td><td>4.4520</td><td>5.8300</td><td>4.5050</td><td>5.5120</td><td>5.2470</td><td>5.4060</td><td>4.7700</td><td>5.3530</td><td>5.3530</td><td>4.6110</td><td>4.8230</td><td>5.9360</td><td>4.9290</td><td>5.6180</td><td>6.0420</td><td>4.5050</td><td>5.5120</td><td>4.6110</td><td>5.1940</td><td>4.6110</td><td>4.7170</td><td>4.5580</td><td>4.4520</td><td>210.46</td></tr>';
+                data += '<tr><td>10</td><td>D Avg. RH% </td><td>2.8987</td><td>2.9561</td><td>3.0709</td><td>2.5256</td><td>3.3866</td><td>2.6691</td><td>2.3534</td><td>2.6978</td><td>2.8126</td><td>3.0996</td><td>3.4440</td><td>2.3247</td><td>2.6404</td><td>2.5830</td><td>2.3247</td><td>2.4108</td><td>2.3821</td><td>2.9561</td><td>2.9274</td><td>2.4682</td><td>2.9274</td><td>2.6691</td><td>2.4395</td><td>2.7552</td><td>3.2431</td><td>3.1570</td><td>3.2718</td><td>3.3005</td><td>2.7265</td><td>2.8413</td><td>2.4969</td><td>3.4153</td><td>2.8413</td><td>2.3247</td><td>3.1857</td><td>2.8700</td><td>2.9561</td><td>3.0135</td><td>2.3247</td><td>3.3866</td><td>113.09</td></tr>';
+                data += '<tr><td>11</td><td>D Avg. Specific Enthalpy (kJ/Kg)</td><td>15.8508</td><td>21.8892</td><td>18.4926</td><td>16.9830</td><td>17.3604</td><td>19.6248</td><td>18.4926</td><td>17.7378</td><td>16.0395</td><td>21.8892</td><td>16.6056</td><td>21.8892</td><td>20.5683</td><td>20.0022</td><td>15.2847</td><td>18.3039</td><td>18.3039</td><td>22.4553</td><td>18.4926</td><td>16.2282</td><td>16.6056</td><td>22.0779</td><td>22.2666</td><td>16.2282</td><td>18.3039</td><td>19.2474</td><td>18.4926</td><td>22.0779</td><td>21.3231</td><td>20.1909</td><td>20.9457</td><td>20.7570</td><td>17.3604</td><td>22.2666</td><td>17.9265</td><td>19.2474</td><td>20.7570</td><td>15.0960</td><td>18.6813</td><td>17.9265</td><td>760.29</td></tr>';
+                data += '<tr><td>12</td><td>D Avg. Dew Point (°C)</td><td>5.1086</td><td>5.7400</td><td>4.7642</td><td>5.4530</td><td>5.6826</td><td>5.5104</td><td>5.4530</td><td>6.3140</td><td>6.6584</td><td>6.3714</td><td>5.2234</td><td>5.6826</td><td>6.7732</td><td>4.9938</td><td>6.4862</td><td>6.3140</td><td>6.3714</td><td>4.7068</td><td>6.3714</td><td>4.8790</td><td>6.3714</td><td>5.2808</td><td>4.9364</td><td>6.8880</td><td>6.3140</td><td>6.3714</td><td>4.7068</td><td>6.4862</td><td>5.8548</td><td>5.2234</td><td>5.6252</td><td>5.1086</td><td>4.8790</td><td>4.7068</td><td>5.1086</td><td>5.1086</td><td>5.1086</td><td>5.6826</td><td>5.9122</td><td>4.9364</td><td>225.45</td></tr>';
+
+            }
+            else if (selected == '3') {
+                data += '<tr><td>13</td><td>THLFF</td><td>27.7955</td><td>22.7198</td><td>20.0611</td><td>24.4117</td><td>21.2696</td><td>25.6202</td><td>28.0372</td><td>27.0704</td><td>23.6866</td><td>22.4781</td><td>22.2364</td><td>19.5777</td><td>22.4781</td><td>25.8619</td><td>29.0040</td><td>26.5870</td><td>27.3121</td><td>20.0611</td><td>25.3785</td><td>27.3121</td><td>24.1700</td><td>22.9615</td><td>21.7530</td><td>23.9283</td><td>24.8951</td><td>22.9615</td><td>23.4449</td><td>25.6202</td><td>28.0372</td><td>28.5206</td><td>22.7198</td><td>24.1700</td><td>26.3453</td><td>24.8951</td><td>21.5113</td><td>22.2364</td><td>21.5113</td><td>19.8194</td><td>26.3453</td><td>25.8619</td><td>970.69</td></tr>';
+                data += '<tr><td>14</td><td>Avg. FLA%</td><td>73.8310</td><td>71.6380</td><td>64.3280</td><td>65.7900</td><td>86.2580</td><td>70.9070</td><td>60.6730</td><td>74.5620</td><td>70.1760</td><td>65.7900</td><td>76.7550</td><td>60.6730</td><td>66.5210</td><td>81.1410</td><td>68.7140</td><td>61.4040</td><td>65.0590</td><td>62.1350</td><td>58.4800</td><td>77.4860</td><td>61.4040</td><td>71.6380</td><td>70.1760</td><td>70.1760</td><td>78.2170</td><td>78.2170</td><td>62.8660</td><td>65.0590</td><td>76.0240</td><td>79.6790</td><td>82.6030</td><td>61.4040</td><td>74.5620</td><td>74.5620</td><td>81.8720</td><td>83.3340</td><td>81.8720</td><td>84.7960</td><td>86.2580</td><td>62.8660</td><td>2869.92</td></tr>';
+                data += '<tr><td>15</td><td>kWh</td><td>1025.9800</td><td>1216.8600</td><td>1061.7700</td><td>1109.4900</td><td>1073.7000</td><td>1014.0500</td><td>1288.4400</td><td>1395.8100</td><td>1240.7200</td><td>1288.4400</td><td>1193.0000</td><td>1360.0200</td><td>1002.1200</td><td>1216.8600</td><td>1312.3000</td><td>1371.9500</td><td>1324.2300</td><td>1371.9500</td><td>1014.0500</td><td>1061.7700</td><td>1264.5800</td><td>1264.5800</td><td>1037.9100</td><td>1014.0500</td><td>1193.0000</td><td>1276.5100</td><td>1181.0700</td><td>1360.0200</td><td>966.3300</td><td>1276.5100</td><td>1193.0000</td><td>1073.7000</td><td>1181.0700</td><td>1407.7400</td><td>1097.5600</td><td>1383.8800</td><td>1312.3000</td><td>1049.8400</td><td>1264.5800</td><td>1228.7900</td><td>47970.53</td></tr>';
+                data += '<tr><td>16</td><td>Off Peak MD (kW)</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.00</td></tr>';
+                data += '<tr><td>17</td><td>Peak (kW)</td><td>324.9664</td><td>380.3584</td><td>424.6720</td><td>428.3648</td><td>387.7440</td><td>324.9664</td><td>406.2080</td><td>299.1168</td><td>413.5936</td><td>347.1232</td><td>317.5808</td><td>413.5936</td><td>317.5808</td><td>435.7504</td><td>302.8096</td><td>376.6656</td><td>336.0448</td><td>376.6656</td><td>413.5936</td><td>428.3648</td><td>347.1232</td><td>324.9664</td><td>295.4240</td><td>302.8096</td><td>369.2800</td><td>313.8880</td><td>324.9664</td><td>324.9664</td><td>354.5088</td><td>398.8224</td><td>332.3520</td><td>395.1296</td><td>428.3648</td><td>310.1952</td><td>369.2800</td><td>339.7376</td><td>328.6592</td><td>384.0512</td><td>365.5872</td><td>428.3648</td><td>14494.23</td></tr>';
+
+            }
+            else if (selected == '4') {
+                data += '<tr><td>18</td><td>Avg. kW </td><td>142.2927</td><td>117.8586</td><td>116.4213</td><td>142.2927</td><td>159.5403</td><td>127.9197</td><td>133.6689</td><td>119.2959</td><td>130.7943</td><td>149.4792</td><td>142.2927</td><td>146.6046</td><td>155.2284</td><td>133.6689</td><td>116.4213</td><td>172.4760</td><td>125.0451</td><td>145.1673</td><td>117.8586</td><td>169.6014</td><td>156.6657</td><td>122.1705</td><td>152.3538</td><td>123.6078</td><td>145.1673</td><td>168.1641</td><td>168.1641</td><td>162.4149</td><td>148.0419</td><td>158.1030</td><td>143.7300</td><td>168.1641</td><td>130.7943</td><td>114.9840</td><td>150.9165</td><td>133.6689</td><td>168.1641</td><td>119.2959</td><td>149.4792</td><td>132.2316</td><td>5680.19</td></tr>';
+                data += '<tr><td>19</td><td>Off Peak MD (kW)</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.0000</td><td>0.00</td></tr>';
+
+            }
+            else if (selected == '5') {
+                data += '<tr><td>20</td><td>Peak (kW)</td><td>99.3984</td><td>100.4672</td><td>87.6416</td><td>128.2560</td><td>100.4672</td><td>127.1872</td><td>96.1920</td><td>98.3296</td><td>96.1920</td><td>94.0544</td><td>109.0176</td><td>95.1232</td><td>126.1184</td><td>117.5680</td><td>90.8480</td><td>109.0176</td><td>96.1920</td><td>122.9120</td><td>98.3296</td><td>115.4304</td><td>94.0544</td><td>115.4304</td><td>95.1232</td><td>115.4304</td><td>99.3984</td><td>115.4304</td><td>89.7792</td><td>89.7792</td><td>107.9488</td><td>102.6048</td><td>90.8480</td><td>91.9168</td><td>122.9120</td><td>128.2560</td><td>88.7104</td><td>99.3984</td><td>116.4992</td><td>121.8432</td><td>125.0496</td><td>97.2608</td><td>4216.42</td></tr>';
+                data += '<tr><td>21</td><td>Avg. kW</td><td>147.2460</td><td>160.0500</td><td>168.0525</td><td>128.0400</td><td>145.6455</td><td>174.4545</td><td>179.2560</td><td>155.2485</td><td>145.6455</td><td>188.8590</td><td>137.6430</td><td>190.4595</td><td>160.0500</td><td>140.8440</td><td>176.0550</td><td>190.4595</td><td>171.2535</td><td>134.4420</td><td>177.6555</td><td>155.2485</td><td>179.2560</td><td>156.8490</td><td>153.6480</td><td>169.6530</td><td>164.8515</td><td>132.8415</td><td>148.8465</td><td>155.2485</td><td>134.4420</td><td>148.8465</td><td>190.4595</td><td>187.2585</td><td>132.8415</td><td>155.2485</td><td>144.0450</td><td>192.0600</td><td>168.0525</td><td>139.2435</td><td>168.0525</td><td>152.0475</td><td>6400.42</td></tr>';
+                data += '<tr><td>22</td><td>kWh</td><td>1514.4102</td><td>1461.2730</td><td>1328.4300</td><td>1527.6945</td><td>1447.9887</td><td>1115.8812</td><td>1235.4399</td><td>1155.7341</td><td>1408.1358</td><td>1421.4201</td><td>1115.8812</td><td>1354.9986</td><td>1195.5870</td><td>1527.6945</td><td>1501.1259</td><td>1288.5771</td><td>1567.5474</td><td>1076.0283</td><td>1580.8317</td><td>1394.8515</td><td>1514.4102</td><td>1182.3027</td><td>1169.0184</td><td>1142.4498</td><td>1262.0085</td><td>1501.1259</td><td>1341.7143</td><td>1527.6945</td><td>1421.4201</td><td>1434.7044</td><td>1394.8515</td><td>1381.5672</td><td>1235.4399</td><td>1222.1556</td><td>1182.3027</td><td>1487.8416</td><td>1142.4498</td><td>1129.1655</td><td>1368.2829</td><td>1580.8317</td><td>53841.26</td></tr>';
+
+            }
+            else if (selected == '6') {
+                data += '<tr><td>26</td><td>Avg. kW</td><td>150.0710</td><td>134.1060</td><td>167.6325</td><td>178.8080</td><td>130.9130</td><td>182.0010</td><td>148.4745</td><td>158.0535</td><td>143.6850</td><td>158.0535</td><td>183.5975</td><td>138.8955</td><td>183.5975</td><td>158.0535</td><td>180.4045</td><td>158.0535</td><td>159.6500</td><td>132.5095</td><td>150.0710</td><td>183.5975</td><td>161.2465</td><td>169.2290</td><td>148.4745</td><td>180.4045</td><td>186.7905</td><td>143.6850</td><td>156.4570</td><td>164.4395</td><td>182.0010</td><td>135.7025</td><td>156.4570</td><td>186.7905</td><td>145.2815</td><td>135.7025</td><td>156.4570</td><td>189.9835</td><td>148.4745</td><td>154.8605</td><td>156.4570</td><td>188.3870</td><td>6427.50</td></tr>';
+                data += '<tr><td>27</td><td>kWh</td><td>1351.6020</td><td>1537.1160</td><td>1179.3390</td><td>1166.0880</td><td>1576.8690</td><td>1550.3670</td><td>1245.5940</td><td>1192.5900</td><td>1113.0840</td><td>1431.1080</td><td>1232.3430</td><td>1563.6180</td><td>1073.3310</td><td>1139.5860</td><td>1311.8490</td><td>1484.1120</td><td>1484.1120</td><td>1179.3390</td><td>1444.3590</td><td>1378.1040</td><td>1245.5940</td><td>1338.3510</td><td>1470.8610</td><td>1590.1200</td><td>1113.0840</td><td>1590.1200</td><td>1576.8690</td><td>1537.1160</td><td>1311.8490</td><td>1152.8370</td><td>1497.3630</td><td>1126.3350</td><td>1192.5900</td><td>1073.3310</td><td>1245.5940</td><td>1152.8370</td><td>1060.0800</td><td>1126.3350</td><td>1219.0920</td><td>1232.3430</td><td>52487.21</td></tr>';
+
+            }
+            else if (selected == '7') {
+                data += '<tr><td>31</td><td>Avg. kW</td><td>138.6265</td><td>184.2917</td><td>151.6737</td><td>179.3990</td><td>187.5535</td><td>140.2574</td><td>169.6136</td><td>174.5063</td><td>153.3046</td><td>138.6265</td><td>192.4462</td><td>135.3647</td><td>189.1844</td><td>187.5535</td><td>190.8153</td><td>145.1501</td><td>150.0428</td><td>184.2917</td><td>174.5063</td><td>138.6265</td><td>140.2574</td><td>161.4591</td><td>140.2574</td><td>176.1372</td><td>179.3990</td><td>190.8153</td><td>189.1844</td><td>133.7338</td><td>192.4462</td><td>159.8282</td><td>156.5664</td><td>143.5192</td><td>138.6265</td><td>135.3647</td><td>140.2574</td><td>185.9226</td><td>190.8153</td><td>135.3647</td><td>172.8754</td><td>154.9355</td><td>6523.62</td></tr>';
+                data += '<tr><td>32</td><td>kWh</td><td>1353.6500</td><td>1475.4785</td><td>1543.1610</td><td>1340.1135</td><td>1461.9420</td><td>1380.7230</td><td>1340.1135</td><td>1164.1390</td><td>1489.0150</td><td>1543.1610</td><td>1516.0880</td><td>1285.9675</td><td>1245.3580</td><td>1340.1135</td><td>1489.0150</td><td>1461.9420</td><td>1367.1865</td><td>1123.5295</td><td>1556.6975</td><td>1150.6025</td><td>1245.3580</td><td>1191.2120</td><td>1516.0880</td><td>1353.6500</td><td>1421.3325</td><td>1245.3580</td><td>1272.4310</td><td>1353.6500</td><td>1543.1610</td><td>1137.0660</td><td>1313.0405</td><td>1191.2120</td><td>1353.6500</td><td>1434.8690</td><td>1543.1610</td><td>1610.8435</td><td>1610.8435</td><td>1272.4310</td><td>1597.3070</td><td>1340.1135</td><td>55174.77</td></tr>';
+            }
+            $('#example tbody').append(data);
+            $('#example').DataTable().draw();
+            
+
+            $('#example').DataTable().columns().eq(0).each(function (colIdx) {
+                $('input', $('#example').DataTable().column(colIdx).footer()).on('keyup change', function () { $('#example').DataTable().column(colIdx).search(this.value).draw(); });
+            });
+        }
     </script>
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">Demo</a>
-      <!--<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="services.html">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Portfolio
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-              <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
-              <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
-              <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
-              <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
-              <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Demo</a>
+            <!--<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Portfolio
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                    <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
+                    <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
+                    <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
+                    <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
+                    <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Blog
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                    <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
+                    <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
+                    <a class="dropdown-item" href="blog-post.html">Blog Post</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Other Pages
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPages">
+                    <a class="dropdown-item" href="full-width.html">Full Width Page</a>
+                    <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
+                    <a class="dropdown-item" href="faq.html">FAQ</a>
+                    <a class="dropdown-item" href="404.html">404</a>
+                    <a class="dropdown-item" href="pricing.html">Pricing Table</a>
+                  </div>
+                </li>
+              </ul>
+            </div>-->
+        </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <h1 class="mt-4 mb-3">Demo</h1>
+
+
+
+        <div class="form-group row">
+            <label class="col-md-3 control-label">Row Name</label>
+            <div class="col-md-9">
+                <select id="ddlRowName" class="form-control">
+                    <option value="">-- Select --</option>
+                    <option value="0">Indoor Properties</option>
+                    <option value="1">Outdoor Properties</option>
+                    <option value="2">Ambient Properties</option>
+                    <option value="3">Actual Load/Electrical Reading of Chillers </option>
+                    <option value="4">MD Baseline</option>
+                    <option value="5">HLF Baseline</option>
+                    <option value="6">Delta DP baseline</option>
+                    <option value="7">kW Baseline</option>
+                </select>
             </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Blog
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-              <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
-              <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
-              <a class="dropdown-item" href="blog-post.html">Blog Post</a>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-md-3 control-label">Date</label>
+            <div class="col-md-9">
+                <input id="txtDate" name="daterange" class="form-control">
             </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Other Pages
-            </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPages">
-              <a class="dropdown-item" href="full-width.html">Full Width Page</a>
-              <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
-              <a class="dropdown-item" href="faq.html">FAQ</a>
-              <a class="dropdown-item" href="404.html">404</a>
-              <a class="dropdown-item" href="pricing.html">Pricing Table</a>
-            </div>
-          </li>
-        </ul>
-      </div>-->
+        </div>
+
+        <input id="btnSearch" type="button" value="Search" class="btn btn-primary" onclick="refreshList()">
+
+        <hr />
+
+        <div class="table-responsive">
+            <table id="example" class="table-warning" cellspacing="0" style="width:100%; margin:5px">
+                <thead>
+                    <tr>
+                        <th>_id</th>
+                        <th>rowName</th>
+                        <th>col1</th>
+                        <th>col2</th>
+                        <th>col3</th>
+                        <th>col4</th>
+                        <th>col5</th>
+                        <th>col6</th>
+                        <th>col7</th>
+                        <th>col8</th>
+                        <th>col9</th>
+                        <th>col10</th>
+                        <th>col11</th>
+                        <th>col12</th>
+                        <th>col13</th>
+                        <th>col14</th>
+                        <th>col15</th>
+                        <th>col16</th>
+                        <th>col17</th>
+                        <th>col18</th>
+                        <th>col19</th>
+                        <th>col20</th>
+                        <th>col21</th>
+                        <th>col22</th>
+                        <th>col23</th>
+                        <th>col24</th>
+                        <th>col25</th>
+                        <th>col26</th>
+                        <th>col27</th>
+                        <th>col28</th>
+                        <th>col29</th>
+                        <th>col30</th>
+                        <th>col31</th>
+                        <th>col32</th>
+                        <th>col33</th>
+                        <th>col34</th>
+                        <th>col35</th>
+                        <th>col36</th>
+                        <th>col37</th>
+                        <th>col38</th>
+                        <th>col39</th>
+                        <th>col40</th>
+                        <th>avgMaxCul</th>
+                    </tr>
+                </thead>
+
+                <tfoot>
+                    <tr>
+                        <th>_id</th>
+                        <th>rowName</th>
+                        <th>col1</th>
+                        <th>col2</th>
+                        <th>col3</th>
+                        <th>col4</th>
+                        <th>col5</th>
+                        <th>col6</th>
+                        <th>col7</th>
+                        <th>col8</th>
+                        <th>col9</th>
+                        <th>col10</th>
+                        <th>col11</th>
+                        <th>col12</th>
+                        <th>col13</th>
+                        <th>col14</th>
+                        <th>col15</th>
+                        <th>col16</th>
+                        <th>col17</th>
+                        <th>col18</th>
+                        <th>col19</th>
+                        <th>col20</th>
+                        <th>col21</th>
+                        <th>col22</th>
+                        <th>col23</th>
+                        <th>col24</th>
+                        <th>col25</th>
+                        <th>col26</th>
+                        <th>col27</th>
+                        <th>col28</th>
+                        <th>col29</th>
+                        <th>col30</th>
+                        <th>col31</th>
+                        <th>col32</th>
+                        <th>col33</th>
+                        <th>col34</th>
+                        <th>col35</th>
+                        <th>col36</th>
+                        <th>col37</th>
+                        <th>col38</th>
+                        <th>col39</th>
+                        <th>col40</th>
+                        <th>avgMaxCul</th>
+                    </tr>
+                </tfoot>
+
+                <tbody></tbody>
+            </table>
+        </div>
+
     </div>
-  </nav>
-
-  <!-- Page Content -->
-  <div class="container-fluid">
-
-      <!-- Page Heading/Breadcrumbs -->
-      <h1 class="mt-4 mb-3">Demo</h1>
-
-     
-
-      <div class="form-group row">
-          <label class="col-md-3 control-label">Branch</label>
-          <div class="col-md-9">
-              <select id="ddlBranch" class="form-control">
-                  <option value="0001">Branch A</option>
-                  <option value="0002">Branch B</option>
-              </select>
-          </div>
-      </div>
-
-      <div class="form-group row">
-          <label class="col-md-3 control-label">Date</label>
-          <div class="col-md-9">
-              <input id="txtDate" name="daterange" class="form-control">
-          </div>
-      </div>
-
-      <input id="btnSearch" type="button" value="Search" class="btn btn-primary">
-
-      <hr />
-
-      <div class="table-responsive">
-          <table id="example" class="table-warning" cellspacing="0" style="width:100%; margin:5px">
-              <thead>
-                  <tr>
-                      <th>Branch</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Transaction</th>
-                  </tr>
-              </thead>
-
-              <tfoot>
-                  <tr>
-                      <th>Branch</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Salary</th>
-                  </tr>
-              </tfoot>
-
-              <tbody>
-                  <tr>
-                      <td>Selangor</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>$320,800</td>
-                  </tr>
-                  <tr>
-                      <td>Garrett Winters</td>
-                      <td>Accountant</td>
-                      <td>Tokyo</td>
-                      <td>$170,750</td>
-                  </tr>
-                  <tr>
-                      <td>Ashton Cox</td>
-                      <td>Junior Technical Author</td>
-                      <td>San Francisco</td>
-                      <td>$86,000</td>
-                  </tr>
-                  <tr>
-                      <td>Cedric Kelly</td>
-                      <td>Senior Javascript Developer</td>
-                      <td>Edinburgh</td>
-                      <td>$433,060</td>
-                  </tr>
-                  <tr>
-                      <td>Airi Satou</td>
-                      <td>Accountant</td>
-                      <td>Tokyo</td>
-                      <td>$162,700</td>
-                  </tr>
-                  <tr>
-                      <td>Brielle Williamson</td>
-                      <td>Integration Specialist</td>
-                      <td>New York</td>
-                      <td>$372,000</td>
-                  </tr>
-                  <tr>
-                      <td>Herrod Chandler</td>
-                      <td>Sales Assistant</td>
-                      <td>San Francisco</td>
-                      <td>$137,500</td>
-                  </tr>
-                  <tr>
-                      <td>Rhona Davidson</td>
-                      <td>Integration Specialist</td>
-                      <td>Tokyo</td>
-                      <td>$327,900</td>
-                  </tr>
-                  <tr>
-                      <td>Colleen Hurst</td>
-                      <td>Javascript Developer</td>
-                      <td>San Francisco</td>
-                      <td>$205,500</td>
-                  </tr>
-                  <tr>
-                      <td>Sonya Frost</td>
-                      <td>Software Engineer</td>
-                      <td>Edinburgh</td>
-                      <td>$103,600</td>
-                  </tr>
-                  <tr>
-                      <td>Jena Gaines</td>
-                      <td>Office Manager</td>
-                      <td>London</td>
-                      <td>$90,560</td>
-                  </tr>
-                  <tr>
-                      <td>Quinn Flynn</td>
-                      <td>Support Lead</td>
-                      <td>Edinburgh</td>
-                      <td>$342,000</td>
-                  </tr>
-                  <tr>
-                      <td>Charde Marshall</td>
-                      <td>Regional Director</td>
-                      <td>San Francisco</td>
-                      <td>$470,600</td>
-                  </tr>
-                  <tr>
-                      <td>Haley Kennedy</td>
-                      <td>Senior Marketing Designer</td>
-                      <td>London</td>
-                      <td>$313,500</td>
-                  </tr>
-                  <tr>
-                      <td>Tatyana Fitzpatrick</td>
-                      <td>Regional Director</td>
-                      <td>London</td>
-                      <td>$385,750</td>
-                  </tr>
-                  <tr>
-                      <td>Michael Silva</td>
-                      <td>Marketing Designer</td>
-                      <td>London</td>
-                      <td>$198,500</td>
-                  </tr>
-                  <tr>
-                      <td>Paul Byrd</td>
-                      <td>Chief Financial Officer (CFO)</td>
-                      <td>New York</td>
-                      <td>$725,000</td>
-                  </tr>
-                  <tr>
-                      <td>Gloria Little</td>
-                      <td>Systems Administrator</td>
-                      <td>New York</td>
-                      <td>$237,500</td>
-                  </tr>
-                  <tr>
-                      <td>Bradley Greer</td>
-                      <td>Software Engineer</td>
-                      <td>London</td>
-                      <td>$132,000</td>
-                  </tr>
-                  <tr>
-                      <td>Dai Rios</td>
-                      <td>Personnel Lead</td>
-                      <td>Edinburgh</td>
-                      <td>$217,500</td>
-                  </tr>
-                  <tr>
-                      <td>Jenette Caldwell</td>
-                      <td>Development Lead</td>
-                      <td>New York</td>
-                      <td>$345,000</td>
-                  </tr>
-                  <tr>
-                      <td>Yuri Berry</td>
-                      <td>Chief Marketing Officer (CMO)</td>
-                      <td>New York</td>
-                      <td>$675,000</td>
-                  </tr>
-                  <tr>
-                      <td>Caesar Vance</td>
-                      <td>Pre-Sales Support</td>
-                      <td>New York</td>
-                      <td>$106,450</td>
-                  </tr>
-                  <tr>
-                      <td>Doris Wilder</td>
-                      <td>Sales Assistant</td>
-                      <td>Sidney</td>
-                      <td>$85,600</td>
-                  </tr>
-                  <tr>
-                      <td>Angelica Ramos</td>
-                      <td>Chief Executive Officer (CEO)</td>
-                      <td>London</td>
-                      <td>$1,200,000</td>
-                  </tr>
-                  <tr>
-                      <td>Gavin Joyce</td>
-                      <td>Developer</td>
-                      <td>Edinburgh</td>
-                      <td>$92,575</td>
-                  </tr>
-                  <tr>
-                      <td>Jennifer Chang</td>
-                      <td>Regional Director</td>
-                      <td>Singapore</td>
-                      <td>$357,650</td>
-                  </tr>
-                  <tr>
-                      <td>Brenden Wagner</td>
-                      <td>Software Engineer</td>
-                      <td>San Francisco</td>
-                      <td>$206,850</td>
-                  </tr>
-                  <tr>
-                      <td>Fiona Green</td>
-                      <td>Chief Operating Officer (COO)</td>
-                      <td>San Francisco</td>
-                      <td>$850,000</td>
-                  </tr>
-                  <tr>
-                      <td>Shou Itou</td>
-                      <td>Regional Marketing</td>
-                      <td>Tokyo</td>
-                      <td>$163,000</td>
-                  </tr>
-                  <tr>
-                      <td>Michelle House</td>
-                      <td>Integration Specialist</td>
-                      <td>Sidney</td>
-                      <td>$95,400</td>
-                  </tr>
-                  <tr>
-                      <td>Suki Burks</td>
-                      <td>Developer</td>
-                      <td>London</td>
-                      <td>$114,500</td>
-                  </tr>
-                  <tr>
-                      <td>Prescott Bartlett</td>
-                      <td>Technical Author</td>
-                      <td>London</td>
-                      <td>$145,000</td>
-                  </tr>
-                  <tr>
-                      <td>Gavin Cortez</td>
-                      <td>Team Leader</td>
-                      <td>San Francisco</td>
-                      <td>$235,500</td>
-                  </tr>
-                  <tr>
-                      <td>Martena Mccray</td>
-                      <td>Post-Sales support</td>
-                      <td>Edinburgh</td>
-                      <td>$324,050</td>
-                  </tr>
-                  <tr>
-                      <td>Unity Butler</td>
-                      <td>Marketing Designer</td>
-                      <td>San Francisco</td>
-                      <td>$85,675</td>
-                  </tr>
-                  <tr>
-                      <td>Howard Hatfield</td>
-                      <td>Office Manager</td>
-                      <td>San Francisco</td>
-                      <td>$164,500</td>
-                  </tr>
-                  <tr>
-                      <td>Hope Fuentes</td>
-                      <td>Secretary</td>
-                      <td>San Francisco</td>
-                      <td>$109,850</td>
-                  </tr>
-                  <tr>
-                      <td>Vivian Harrell</td>
-                      <td>Financial Controller</td>
-                      <td>San Francisco</td>
-                      <td>$452,500</td>
-                  </tr>
-                  <tr>
-                      <td>Timothy Mooney</td>
-                      <td>Office Manager</td>
-                      <td>London</td>
-                      <td>$136,200</td>
-                  </tr>
-                  <tr>
-                      <td>Jackson Bradshaw</td>
-                      <td>Director</td>
-                      <td>New York</td>
-                      <td>$645,750</td>
-                  </tr>
-                  <tr>
-                      <td>Olivia Liang</td>
-                      <td>Support Engineer</td>
-                      <td>Singapore</td>
-                      <td>$234,500</td>
-                  </tr>
-                  <tr>
-                      <td>Bruno Nash</td>
-                      <td>Software Engineer</td>
-                      <td>London</td>
-                      <td>$163,500</td>
-                  </tr>
-                  <tr>
-                      <td>Sakura Yamamoto</td>
-                      <td>Support Engineer</td>
-                      <td>Tokyo</td>
-                      <td>$139,575</td>
-                  </tr>
-                  <tr>
-                      <td>Thor Walton</td>
-                      <td>Developer</td>
-                      <td>New York</td>
-                      <td>$98,540</td>
-                  </tr>
-                  <tr>
-                      <td>Finn Camacho</td>
-                      <td>Support Engineer</td>
-                      <td>San Francisco</td>
-                      <td>$87,500</td>
-                  </tr>
-                  <tr>
-                      <td>Serge Baldwin</td>
-                      <td>Data Coordinator</td>
-                      <td>Singapore</td>
-                      <td>$138,575</td>
-                  </tr>
-                  <tr>
-                      <td>Zenaida Frank</td>
-                      <td>Software Engineer</td>
-                      <td>New York</td>
-                      <td>$125,250</td>
-                  </tr>
-                  <tr>
-                      <td>Zorita Serrano</td>
-                      <td>Software Engineer</td>
-                      <td>San Francisco</td>
-                      <td>$115,000</td>
-                  </tr>
-                  <tr>
-                      <td>Jennifer Acosta</td>
-                      <td>Junior Javascript Developer</td>
-                      <td>Edinburgh</td>
-                      <td>$75,650</td>
-                  </tr>
-                  <tr>
-                      <td>Cara Stevens</td>
-                      <td>Sales Assistant</td>
-                      <td>New York</td>
-                      <td>$145,600</td>
-                  </tr>
-                  <tr>
-                      <td>Hermione Butler</td>
-                      <td>Regional Director</td>
-                      <td>London</td>
-                      <td>$356,250</td>
-                  </tr>
-                  <tr>
-                      <td>Lael Greer</td>
-                      <td>Systems Administrator</td>
-                      <td>London</td>
-                      <td>$103,500</td>
-                  </tr>
-                  <tr>
-                      <td>Jonas Alexander</td>
-                      <td>Developer</td>
-                      <td>San Francisco</td>
-                      <td>$86,500</td>
-                  </tr>
-                  <tr>
-                      <td>Shad Decker</td>
-                      <td>Regional Director</td>
-                      <td>Edinburgh</td>
-                      <td>$183,000</td>
-                  </tr>
-                  <tr>
-                      <td>Michael Bruce</td>
-                      <td>Javascript Developer</td>
-                      <td>Singapore</td>
-                      <td>$183,000</td>
-                  </tr>
-                  <tr>
-                      <td>Donna Snider</td>
-                      <td>Customer Support</td>
-                      <td>New York</td>
-                      <td>$112,000</td>
-                  </tr>
-              </tbody>
-          </table>
-      </div>
-
-  </div>
 
 </body>
 
