@@ -20,13 +20,17 @@
     <script src="external/datatable.js"></script>
 
 
+    <script type="text/javascript" src="external/moment.min.js"></script>
+    <script type="text/javascript" src="external/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="external/daterangepicker.css" />
+
     <script type="text/javascript">
-        
+
         //var table = $('#example').DataTable({
         //    "dom": '<"top"i>rt<"bottom"flp><"clear">'
         //});
         $(document).ready(function () {
-            
+
             //// Setup - add a text input to each footer cell
             $('#example tfoot th').each(function () {
                 var title = $('#example thead th').eq($(this).index()).text();
@@ -41,12 +45,14 @@
             table.columns().eq(0).each(function (colIdx) {
                 $('input', table.column(colIdx).footer()).on('keyup change', function () { table.column(colIdx).search(this.value).draw(); });
             });
-            
+
 
             refreshList();
+
+            $('input[name="daterange"]').daterangepicker();
         });
 
-        
+
 
         function refreshList() {
 
@@ -67,7 +73,7 @@
                 data += '<tr><td>2</td><td>Avg. Indoor  RH%</td><td>59.8671</td><td>67.2581</td><td>81.3010</td><td>79.8228</td><td>71.6927</td><td>84.9965</td><td>79.0837</td><td>79.0837</td><td>75.3882</td><td>82.0401</td><td>63.5626</td><td>69.4754</td><td>83.5183</td><td>71.6927</td><td>79.8228</td><td>87.2138</td><td>81.3010</td><td>70.9536</td><td>84.9965</td><td>85.7356</td><td>62.8235</td><td>61.3453</td><td>73.9100</td><td>59.8671</td><td>78.3446</td><td>84.2574</td><td>84.2574</td><td>84.2574</td><td>70.2145</td><td>76.1273</td><td>64.3017</td><td>73.1709</td><td>70.2145</td><td>73.9100</td><td>62.8235</td><td>87.9529</td><td>87.9529</td><td>61.3453</td><td>67.9972</td><td>67.9972</td><td>2991.87</td></tr>';
                 data += '<tr><td>3</td><td>Avg. Specific Enthalpy (kJ/Kg)</td><td>60.4592</td><td>48.9928</td><td>61.5016</td><td>56.8108</td><td>50.5564</td><td>53.1624</td><td>42.2172</td><td>53.6836</td><td>57.8532</td><td>59.4168</td><td>62.5440</td><td>60.4592</td><td>58.8956</td><td>48.9928</td><td>43.7808</td><td>60.9804</td><td>41.6960</td><td>44.3020</td><td>45.8656</td><td>47.4292</td><td>55.2472</td><td>57.3320</td><td>53.1624</td><td>47.4292</td><td>54.2048</td><td>60.4592</td><td>45.8656</td><td>48.4716</td><td>61.5016</td><td>47.9504</td><td>45.8656</td><td>44.8232</td><td>53.1624</td><td>54.7260</td><td>58.8956</td><td>41.6960</td><td>54.2048</td><td>56.8108</td><td>43.7808</td><td>49.5140</td><td>2094.70</td></tr>';
                 data += '<tr><td>4</td><td>Avg. Dew Point (°C)</td><td>18.9840</td><td>14.4075</td><td>13.8990</td><td>16.9500</td><td>17.7975</td><td>16.9500</td><td>19.8315</td><td>14.0685</td><td>16.9500</td><td>15.7635</td><td>15.5940</td><td>18.9840</td><td>15.2550</td><td>14.7465</td><td>16.9500</td><td>19.4925</td><td>19.3230</td><td>17.6280</td><td>17.6280</td><td>14.7465</td><td>15.9330</td><td>14.5770</td><td>15.9330</td><td>16.6110</td><td>18.6450</td><td>18.3060</td><td>16.9500</td><td>19.6620</td><td>17.9670</td><td>20.1705</td><td>19.6620</td><td>15.2550</td><td>16.9500</td><td>19.3230</td><td>18.8145</td><td>15.0855</td><td>13.5600</td><td>20.0010</td><td>14.0685</td><td>18.9840</td><td>682.41</td></tr>';
-                
+
             }
             if (selected == '1' || selected == '8') {
                 data += '<tr><td>5</td><td>Avg. Outdoor DBT (°C)</td><td>24.0656</td><td>30.8256</td><td>22.4432</td><td>27.5808</td><td>31.9072</td><td>29.7440</td><td>25.1472</td><td>25.1472</td><td>29.4736</td><td>21.6320</td><td>32.1776</td><td>31.0960</td><td>30.0144</td><td>28.9328</td><td>27.5808</td><td>28.9328</td><td>27.3104</td><td>31.6368</td><td>26.7696</td><td>30.5552</td><td>27.0400</td><td>23.7952</td><td>29.7440</td><td>27.8512</td><td>22.4432</td><td>24.0656</td><td>21.6320</td><td>22.1728</td><td>26.7696</td><td>27.3104</td><td>26.2288</td><td>25.6880</td><td>30.8256</td><td>23.7952</td><td>27.0400</td><td>31.0960</td><td>29.2032</td><td>21.9024</td><td>28.3920</td><td>22.9840</td><td>1082.96</td></tr>';
@@ -112,7 +118,7 @@
             }
             $('#example tbody').append(data);
             $('#example').DataTable().draw();
-            
+
 
             $('#example').DataTable().columns().eq(0).each(function (colIdx) {
                 $('input', $('#example').DataTable().column(colIdx).footer()).on('keyup change', function () { $('#example').DataTable().column(colIdx).search(this.value).draw(); });
