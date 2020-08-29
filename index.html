@@ -25,19 +25,589 @@
     <!--<link rel="stylesheet" type="text/css" href="external/bootstrap-year-calendar.css" />-->
 
     <link rel="stylesheet" href="external/font-awesome.css" />
-	
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-176057130-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
 
-	  gtag('config', 'UA-176057130-1');
-	</script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176057130-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-176057130-1');
+    </script>
 
     <script type="text/javascript">
         var items = [
+            {
+                "year": "2020",
+                "date": "1-Jan",
+                "day": "Wed",
+                "description": "New Year's Day",
+                "state": "New Year's Day",
+                "startDate": "2020-01-01",
+                "endDate": "2020-01-01",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "14-Jan",
+                "day": "Tue",
+                "description": "YDPB Negeri Sembilan's Birthday",
+                "state": "Negeri Sembilan",
+                "startDate": "2020-01-14",
+                "endDate": "2020-01-14",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "25-Jan",
+                "day": "Sat",
+                "description": "Chinese New Year",
+                "state": "National",
+                "startDate": "2020-01-25",
+                "endDate": "2020-01-25",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "26-Jan",
+                "day": "Sun",
+                "description": "Chinese New Year Holiday",
+                "state": "National",
+                "startDate": "2020-01-26",
+                "endDate": "2020-01-26",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "27-Jan",
+                "day": "Mon",
+                "description": "Chinese New Year Holiday",
+                "state": "National except Johor, Kedah",
+                "startDate": "2020-01-27",
+                "endDate": "2020-01-27",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "1-Feb",
+                "day": "Sat",
+                "description": "Federal Territory Day",
+                "state": "Kuala Lumpur, Labuan, Putrajaya",
+                "startDate": "2020-02-01",
+                "endDate": "2020-02-01",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "8-Feb",
+                "day": "Sat",
+                "description": "Thaipusam",
+                "state": "Johor, Kuala Lumpur, Negeri Sembilan, Penang, Perak, Putrajaya, Selangor",
+                "startDate": "2020-02-08",
+                "endDate": "2020-02-08",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "4-Mar",
+                "day": "Wed",
+                "description": "Installation of Sultan Terengganu",
+                "state": "Terengganu",
+                "startDate": "2020-03-04",
+                "endDate": "2020-03-04",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "22-Mar",
+                "day": "Sun",
+                "description": "Israk and Mikraj",
+                "state": "Kedah, Negeri Sembilan, Perlis, Terengganu",
+                "startDate": "2020-03-22",
+                "endDate": "2020-03-22",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "23-Mar",
+                "day": "Mon",
+                "description": "Sultan of Johor's Birthday",
+                "state": "Johor",
+                "startDate": "2020-03-23",
+                "endDate": "2020-03-23",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "23-Mar",
+                "day": "Mon",
+                "description": "Israk and Mikraj Holiday",
+                "state": "Negeri Sembilan, Perlis",
+                "startDate": "2020-03-23",
+                "endDate": "2020-03-23",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "10-Apr",
+                "day": "Fri",
+                "description": "Good Friday",
+                "state": "Sabah & Sarawak",
+                "startDate": "2020-04-10",
+                "endDate": "2020-04-10",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "15-Apr",
+                "day": "Wed",
+                "description": "Declaration of Melaka as a Historical City",
+                "state": "Melaka",
+                "startDate": "2020-04-15",
+                "endDate": "2020-04-15",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "24-Apr",
+                "day": "Fri",
+                "description": "Awal Ramadan",
+                "state": "Johor, Kedah,Melaka",
+                "startDate": "2020-04-24",
+                "endDate": "2020-04-24",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "26-Apr",
+                "day": "Sun",
+                "description": "Sultan of Terengganu's Birthday",
+                "state": "Terengganu",
+                "startDate": "2020-04-26",
+                "endDate": "2020-04-26",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "26-Apr",
+                "day": "Sun",
+                "description": "Awal Ramadan Holiday",
+                "state": "Johor & Kedah",
+                "startDate": "2020-04-26",
+                "endDate": "2020-04-26",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "1-May",
+                "day": "Fri",
+                "description": "Labour Day",
+                "state": "National",
+                "startDate": "2020-05-01",
+                "endDate": "2020-05-01",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "3-May",
+                "day": "Sun",
+                "description": "Labour Day Holiday",
+                "state": "Johor & Kedah",
+                "startDate": "2020-05-03",
+                "endDate": "2020-05-03",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "7-May",
+                "day": "Thu",
+                "description": "Wesak Day",
+                "state": "National",
+                "startDate": "2020-05-07",
+                "endDate": "2020-05-07",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "10-May",
+                "day": "Sun",
+                "description": "Nuzul Al-Quran",
+                "state": "National except Johor, Kedah, Melaka, Negeri Sembilan, Sabah, Sarawak",
+                "startDate": "2020-05-10",
+                "endDate": "2020-05-10",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "11-May",
+                "day": "Mon",
+                "description": "Nuzul Al-Quran Holiday",
+                "state": "Kuala Lumpur, Labuan, Pahang, Penang, Perak, Perlis, Putrajaya, Selangor",
+                "startDate": "2020-05-11",
+                "endDate": "2020-05-11",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "22-May",
+                "day": "Fri",
+                "description": "Hari Hol Pahang",
+                "state": "Pahang",
+                "startDate": "2020-05-22",
+                "endDate": "2020-05-22",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "24-May",
+                "day": "Sun",
+                "description": "Hari Raya Aidilfitri",
+                "state": "National",
+                "startDate": "2020-05-24",
+                "endDate": "2020-05-24",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "25-May",
+                "day": "Mon",
+                "description": "Hari Raya Aidilfitri Holiday",
+                "state": "National",
+                "startDate": "2020-05-25",
+                "endDate": "2020-05-25",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "26-May",
+                "day": "Tue",
+                "description": "Hari Raya Aidilfitri Holiday",
+                "state": "National except Johor, Kedah, Kelantan, Terengganu",
+                "startDate": "2020-05-26",
+                "endDate": "2020-05-26",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "30-May",
+                "day": "Sat",
+                "description": "Harvest Festival",
+                "state": "Labuan & Sabah",
+                "startDate": "2020-05-30",
+                "endDate": "2020-05-30",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "31-May",
+                "day": "Sun",
+                "description": "Harvest Festival Holiday",
+                "state": "Labuan & Sabah",
+                "startDate": "2020-05-31",
+                "endDate": "2020-05-31",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "1-Jun",
+                "day": "Mon",
+                "description": "Hari Gawai",
+                "state": "Sarawak",
+                "startDate": "2020-06-01",
+                "endDate": "2020-06-01",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "1-Jun",
+                "day": "Mon",
+                "description": "Harvest Festival Holiday",
+                "state": "Labuan & Sabah",
+                "startDate": "2020-06-01",
+                "endDate": "2020-06-01",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "2-Jun",
+                "day": "Tue",
+                "description": "Hari Gawai Holiday",
+                "state": "Sarawak",
+                "startDate": "2020-06-02",
+                "endDate": "2020-06-02",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "8-Jun",
+                "day": "Mon",
+                "description": "Agong's Birthday",
+                "state": "National",
+                "startDate": "2020-06-08",
+                "endDate": "2020-06-08",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "21-Jun",
+                "day": "Sun",
+                "description": "Sultan of Kedah's Birthday",
+                "state": "Kedah",
+                "startDate": "2020-06-21",
+                "endDate": "2020-06-21",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "7-Jul",
+                "day": "Tue",
+                "description": "Georgetown World Heritage City Day",
+                "state": "Penang",
+                "startDate": "2020-07-07",
+                "endDate": "2020-07-07",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "11-Jul",
+                "day": "Sat",
+                "description": "Penang Governor's Birthday",
+                "state": "Penang",
+                "startDate": "2020-07-11",
+                "endDate": "2020-07-11",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "17-Jul",
+                "day": "Fri",
+                "description": "Raja Perlis' Birthday",
+                "state": "Perlis",
+                "startDate": "2020-07-17",
+                "endDate": "2020-07-17",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "22-Jul",
+                "day": "Wed",
+                "description": "Sarawak Day",
+                "state": "Sarawak",
+                "startDate": "2020-07-22",
+                "endDate": "2020-07-22",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "30-Jul",
+                "day": "Thu",
+                "description": "Sultan of Pahang's Birthday",
+                "state": "Pahang",
+                "startDate": "2020-07-30",
+                "endDate": "2020-07-30",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "30-Jul",
+                "day": "Thu",
+                "description": "Arafat Day",
+                "state": "Terengganu",
+                "startDate": "2020-07-30",
+                "endDate": "2020-07-30",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "31-Jul",
+                "day": "Fri",
+                "description": "Hari Raya Haji",
+                "state": "National",
+                "startDate": "2020-07-31",
+                "endDate": "2020-07-31",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "1-Aug",
+                "day": "Sat",
+                "description": "Hari Raya Haji Holiday",
+                "state": "Kedah, Kelantan, Perlis, Terengganu",
+                "startDate": "2020-08-01",
+                "endDate": "2020-08-01",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "2-Aug",
+                "day": "Sun",
+                "description": "Hari Raya Haji Holiday",
+                "state": "Kelantan & Terengganu",
+                "startDate": "2020-08-02",
+                "endDate": "2020-08-02",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "20-Aug",
+                "day": "Thu",
+                "description": "Awal Muharram",
+                "state": "National",
+                "startDate": "2020-08-20",
+                "endDate": "2020-08-20",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "31-Aug",
+                "day": "Mon",
+                "description": "Merdeka Day",
+                "state": "National",
+                "startDate": "2020-08-31",
+                "endDate": "2020-08-31",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "16-Sep",
+                "day": "Wed",
+                "description": "Malaysia Day",
+                "state": "National",
+                "startDate": "2020-09-16",
+                "endDate": "2020-09-16",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "24-Sep",
+                "day": "Thu",
+                "description": "Hari Hol Almarhum Sultan Iskandar",
+                "state": "Johor",
+                "startDate": "2020-09-24",
+                "endDate": "2020-09-24",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "3-Oct",
+                "day": "Sat",
+                "description": "Sabah Governor's Birthday",
+                "state": "Sabah",
+                "startDate": "2020-10-03",
+                "endDate": "2020-10-03",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "9-Oct",
+                "day": "Fri",
+                "description": "Melaka Governor's Birthday",
+                "state": "Melaka",
+                "startDate": "2020-10-09",
+                "endDate": "2020-10-09",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "10-Oct",
+                "day": "Sat",
+                "description": "Sarawak Governor's Birthday",
+                "state": "Sarawak",
+                "startDate": "2020-10-10",
+                "endDate": "2020-10-10",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "29-Oct",
+                "day": "Thu",
+                "description": "Prophet Muhammad's Birthday",
+                "state": "National",
+                "startDate": "2020-10-29",
+                "endDate": "2020-10-29",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "6-Nov",
+                "day": "Fri",
+                "description": "Sultan of Perak's Birthday",
+                "state": "Perak",
+                "startDate": "2020-11-06",
+                "endDate": "2020-11-06",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "11-Nov",
+                "day": "Wed",
+                "description": "Sultan of Kelantan's Birthday",
+                "state": "Kelantan",
+                "startDate": "2020-11-11",
+                "endDate": "2020-11-11",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "12-Nov",
+                "day": "Thu",
+                "description": "Sultan of Kelantan's Birthday Holiday",
+                "state": "Kelantan",
+                "startDate": "2020-11-12",
+                "endDate": "2020-11-12",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "14-Nov",
+                "day": "Sat",
+                "description": "Deepavali",
+                "state": "National except Sarawak",
+                "startDate": "2020-11-14",
+                "endDate": "2020-11-14",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "15-Nov",
+                "day": "Sun",
+                "description": "Deepavali Holiday",
+                "state": "Kelantan & Terengganu",
+                "startDate": "2020-11-15",
+                "endDate": "2020-11-15",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "11-Dec",
+                "day": "Fri",
+                "description": "Sultan of Selangor's Birthday",
+                "state": "Selangor",
+                "startDate": "2020-12-11",
+                "endDate": "2020-12-11",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "25-Dec",
+                "day": "Fri",
+                "description": "Christmas Day",
+                "state": "National",
+                "startDate": "2020-12-25",
+                "endDate": "2020-12-25",
+                "color": "#ff4a32"
+            },
+            {
+                "year": "2020",
+                "date": "27-Dec",
+                "day": "Sun",
+                "description": "Christmas Holiday",
+                "state": "Johor & Kedah",
+                "startDate": "2020-12-27",
+                "endDate": "2020-12-27",
+                "color": "#ff4a32"
+            },
             {
                 "year": "2021",
                 "date": "1-Jan",
@@ -583,10 +1153,633 @@
                 "startDate": "2021-12-10",
                 "endDate": "2021-12-31",
                 "color": "#9cb703"
+            },
+            {
+                "year": "2020",
+                "start": "1-Jan (Wed)",
+                "end": "2-Jan (Thur)",
+                "day": "",
+                "description": "First day of School",
+                "state": "National",
+                "startDate": "2020-01-01",
+                "endDate": "2020-01-02",
+                "color": "#9cb703"
+            },
+            {
+                "year": "2020",
+                "start": "13-Mar (Fri)",
+                "end": "22-Mar (Sun)",
+                "day": "",
+                "description": "Term 1",
+                "state": "National",
+                "startDate": "2020-03-13",
+                "endDate": "2020-03-22",
+                "color": "#9cb703"
+            }, {
+                "year": "2020",
+                "start": "22-May (Fri)",
+                "end": "07-Jun (Sun)",
+                "day": "",
+                "description": "Mid Year",
+                "state": "National",
+                "startDate": "2020-05-22",
+                "endDate": "2020-06-07",
+                "color": "#9cb703"
+            },
+            {
+                "year": "2020",
+                "start": "20-Aug (Thur)",
+                "end": "24-Aug (Mon)",
+                "day": "",
+                "description": "Term 2",
+                "state": "National",
+                "startDate": "2020-08-20",
+                "endDate": "2020-08-24",
+                "color": "#9cb703"
+            }, {
+                "year": "2020",
+                "start": "18-Dec (Fri)",
+                "end": "19-Jan (Tue)",
+                "day": "",
+                "description": "Year End",
+                "state": "National",
+                "startDate": "2020-12-18",
+                "endDate": "2021-01-19",
+                "color": "#9cb703"
             }
         ];
 
-        var ph = [
+        var ph_2020 = [{
+            "year": "2020",
+            "date": "1-Jan",
+            "day": "Wed",
+            "description": "New Year's Day",
+            "state": "New Year's Day",
+            "startDate": "2020-01-01",
+            "endDate": "2020-01-01",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "14-Jan",
+            "day": "Tue",
+            "description": "YDPB Negeri Sembilan's Birthday",
+            "state": "Negeri Sembilan",
+            "startDate": "2020-01-14",
+            "endDate": "2020-01-14",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "25-Jan",
+            "day": "Sat",
+            "description": "Chinese New Year",
+            "state": "National",
+            "startDate": "2020-01-25",
+            "endDate": "2020-01-25",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "26-Jan",
+            "day": "Sun",
+            "description": "Chinese New Year Holiday",
+            "state": "National",
+            "startDate": "2020-01-26",
+            "endDate": "2020-01-26",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "27-Jan",
+            "day": "Mon",
+            "description": "Chinese New Year Holiday",
+            "state": "National except Johor, Kedah",
+            "startDate": "2020-01-27",
+            "endDate": "2020-01-27",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "1-Feb",
+            "day": "Sat",
+            "description": "Federal Territory Day",
+            "state": "Kuala Lumpur, Labuan, Putrajaya",
+            "startDate": "2020-02-01",
+            "endDate": "2020-02-01",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "8-Feb",
+            "day": "Sat",
+            "description": "Thaipusam",
+            "state": "Johor, Kuala Lumpur, Negeri Sembilan, Penang, Perak, Putrajaya, Selangor",
+            "startDate": "2020-02-08",
+            "endDate": "2020-02-08",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "4-Mar",
+            "day": "Wed",
+            "description": "Installation of Sultan Terengganu",
+            "state": "Terengganu",
+            "startDate": "2020-03-04",
+            "endDate": "2020-03-04",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "22-Mar",
+            "day": "Sun",
+            "description": "Israk and Mikraj",
+            "state": "Kedah, Negeri Sembilan, Perlis, Terengganu",
+            "startDate": "2020-03-22",
+            "endDate": "2020-03-22",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "23-Mar",
+            "day": "Mon",
+            "description": "Sultan of Johor's Birthday",
+            "state": "Johor",
+            "startDate": "2020-03-23",
+            "endDate": "2020-03-23",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "23-Mar",
+            "day": "Mon",
+            "description": "Israk and Mikraj Holiday",
+            "state": "Negeri Sembilan, Perlis",
+            "startDate": "2020-03-23",
+            "endDate": "2020-03-23",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "10-Apr",
+            "day": "Fri",
+            "description": "Good Friday",
+            "state": "Sabah & Sarawak",
+            "startDate": "2020-04-10",
+            "endDate": "2020-04-10",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "15-Apr",
+            "day": "Wed",
+            "description": "Declaration of Melaka as a Historical City",
+            "state": "Melaka",
+            "startDate": "2020-04-15",
+            "endDate": "2020-04-15",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "24-Apr",
+            "day": "Fri",
+            "description": "Awal Ramadan",
+            "state": "Johor, Kedah,Melaka",
+            "startDate": "2020-04-24",
+            "endDate": "2020-04-24",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "26-Apr",
+            "day": "Sun",
+            "description": "Sultan of Terengganu's Birthday",
+            "state": "Terengganu",
+            "startDate": "2020-04-26",
+            "endDate": "2020-04-26",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "26-Apr",
+            "day": "Sun",
+            "description": "Awal Ramadan Holiday",
+            "state": "Johor & Kedah",
+            "startDate": "2020-04-26",
+            "endDate": "2020-04-26",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "1-May",
+            "day": "Fri",
+            "description": "Labour Day",
+            "state": "National",
+            "startDate": "2020-05-01",
+            "endDate": "2020-05-01",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "3-May",
+            "day": "Sun",
+            "description": "Labour Day Holiday",
+            "state": "Johor & Kedah",
+            "startDate": "2020-05-03",
+            "endDate": "2020-05-03",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "7-May",
+            "day": "Thu",
+            "description": "Wesak Day",
+            "state": "National",
+            "startDate": "2020-05-07",
+            "endDate": "2020-05-07",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "10-May",
+            "day": "Sun",
+            "description": "Nuzul Al-Quran",
+            "state": "National except Johor, Kedah, Melaka, Negeri Sembilan, Sabah, Sarawak",
+            "startDate": "2020-05-10",
+            "endDate": "2020-05-10",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "11-May",
+            "day": "Mon",
+            "description": "Nuzul Al-Quran Holiday",
+            "state": "Kuala Lumpur, Labuan, Pahang, Penang, Perak, Perlis, Putrajaya, Selangor",
+            "startDate": "2020-05-11",
+            "endDate": "2020-05-11",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "22-May",
+            "day": "Fri",
+            "description": "Hari Hol Pahang",
+            "state": "Pahang",
+            "startDate": "2020-05-22",
+            "endDate": "2020-05-22",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "24-May",
+            "day": "Sun",
+            "description": "Hari Raya Aidilfitri",
+            "state": "National",
+            "startDate": "2020-05-24",
+            "endDate": "2020-05-24",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "25-May",
+            "day": "Mon",
+            "description": "Hari Raya Aidilfitri Holiday",
+            "state": "National",
+            "startDate": "2020-05-25",
+            "endDate": "2020-05-25",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "26-May",
+            "day": "Tue",
+            "description": "Hari Raya Aidilfitri Holiday",
+            "state": "National except Johor, Kedah, Kelantan, Terengganu",
+            "startDate": "2020-05-26",
+            "endDate": "2020-05-26",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "30-May",
+            "day": "Sat",
+            "description": "Harvest Festival",
+            "state": "Labuan & Sabah",
+            "startDate": "2020-05-30",
+            "endDate": "2020-05-30",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "31-May",
+            "day": "Sun",
+            "description": "Harvest Festival Holiday",
+            "state": "Labuan & Sabah",
+            "startDate": "2020-05-31",
+            "endDate": "2020-05-31",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "1-Jun",
+            "day": "Mon",
+            "description": "Hari Gawai",
+            "state": "Sarawak",
+            "startDate": "2020-06-01",
+            "endDate": "2020-06-01",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "1-Jun",
+            "day": "Mon",
+            "description": "Harvest Festival Holiday",
+            "state": "Labuan & Sabah",
+            "startDate": "2020-06-01",
+            "endDate": "2020-06-01",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "2-Jun",
+            "day": "Tue",
+            "description": "Hari Gawai Holiday",
+            "state": "Sarawak",
+            "startDate": "2020-06-02",
+            "endDate": "2020-06-02",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "8-Jun",
+            "day": "Mon",
+            "description": "Agong's Birthday",
+            "state": "National",
+            "startDate": "2020-06-08",
+            "endDate": "2020-06-08",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "21-Jun",
+            "day": "Sun",
+            "description": "Sultan of Kedah's Birthday",
+            "state": "Kedah",
+            "startDate": "2020-06-21",
+            "endDate": "2020-06-21",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "7-Jul",
+            "day": "Tue",
+            "description": "Georgetown World Heritage City Day",
+            "state": "Penang",
+            "startDate": "2020-07-07",
+            "endDate": "2020-07-07",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "11-Jul",
+            "day": "Sat",
+            "description": "Penang Governor's Birthday",
+            "state": "Penang",
+            "startDate": "2020-07-11",
+            "endDate": "2020-07-11",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "17-Jul",
+            "day": "Fri",
+            "description": "Raja Perlis' Birthday",
+            "state": "Perlis",
+            "startDate": "2020-07-17",
+            "endDate": "2020-07-17",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "22-Jul",
+            "day": "Wed",
+            "description": "Sarawak Day",
+            "state": "Sarawak",
+            "startDate": "2020-07-22",
+            "endDate": "2020-07-22",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "30-Jul",
+            "day": "Thu",
+            "description": "Sultan of Pahang's Birthday",
+            "state": "Pahang",
+            "startDate": "2020-07-30",
+            "endDate": "2020-07-30",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "30-Jul",
+            "day": "Thu",
+            "description": "Arafat Day",
+            "state": "Terengganu",
+            "startDate": "2020-07-30",
+            "endDate": "2020-07-30",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "31-Jul",
+            "day": "Fri",
+            "description": "Hari Raya Haji",
+            "state": "National",
+            "startDate": "2020-07-31",
+            "endDate": "2020-07-31",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "1-Aug",
+            "day": "Sat",
+            "description": "Hari Raya Haji Holiday",
+            "state": "Kedah, Kelantan, Perlis, Terengganu",
+            "startDate": "2020-08-01",
+            "endDate": "2020-08-01",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "2-Aug",
+            "day": "Sun",
+            "description": "Hari Raya Haji Holiday",
+            "state": "Kelantan & Terengganu",
+            "startDate": "2020-08-02",
+            "endDate": "2020-08-02",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "20-Aug",
+            "day": "Thu",
+            "description": "Awal Muharram",
+            "state": "National",
+            "startDate": "2020-08-20",
+            "endDate": "2020-08-20",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "31-Aug",
+            "day": "Mon",
+            "description": "Merdeka Day",
+            "state": "National",
+            "startDate": "2020-08-31",
+            "endDate": "2020-08-31",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "16-Sep",
+            "day": "Wed",
+            "description": "Malaysia Day",
+            "state": "National",
+            "startDate": "2020-09-16",
+            "endDate": "2020-09-16",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "24-Sep",
+            "day": "Thu",
+            "description": "Hari Hol Almarhum Sultan Iskandar",
+            "state": "Johor",
+            "startDate": "2020-09-24",
+            "endDate": "2020-09-24",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "3-Oct",
+            "day": "Sat",
+            "description": "Sabah Governor's Birthday",
+            "state": "Sabah",
+            "startDate": "2020-10-03",
+            "endDate": "2020-10-03",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "9-Oct",
+            "day": "Fri",
+            "description": "Melaka Governor's Birthday",
+            "state": "Melaka",
+            "startDate": "2020-10-09",
+            "endDate": "2020-10-09",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "10-Oct",
+            "day": "Sat",
+            "description": "Sarawak Governor's Birthday",
+            "state": "Sarawak",
+            "startDate": "2020-10-10",
+            "endDate": "2020-10-10",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "29-Oct",
+            "day": "Thu",
+            "description": "Prophet Muhammad's Birthday",
+            "state": "National",
+            "startDate": "2020-10-29",
+            "endDate": "2020-10-29",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "6-Nov",
+            "day": "Fri",
+            "description": "Sultan of Perak's Birthday",
+            "state": "Perak",
+            "startDate": "2020-11-06",
+            "endDate": "2020-11-06",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "11-Nov",
+            "day": "Wed",
+            "description": "Sultan of Kelantan's Birthday",
+            "state": "Kelantan",
+            "startDate": "2020-11-11",
+            "endDate": "2020-11-11",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "12-Nov",
+            "day": "Thu",
+            "description": "Sultan of Kelantan's Birthday Holiday",
+            "state": "Kelantan",
+            "startDate": "2020-11-12",
+            "endDate": "2020-11-12",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "14-Nov",
+            "day": "Sat",
+            "description": "Deepavali",
+            "state": "National except Sarawak",
+            "startDate": "2020-11-14",
+            "endDate": "2020-11-14",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "15-Nov",
+            "day": "Sun",
+            "description": "Deepavali Holiday",
+            "state": "Kelantan & Terengganu",
+            "startDate": "2020-11-15",
+            "endDate": "2020-11-15",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "11-Dec",
+            "day": "Fri",
+            "description": "Sultan of Selangor's Birthday",
+            "state": "Selangor",
+            "startDate": "2020-12-11",
+            "endDate": "2020-12-11",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "25-Dec",
+            "day": "Fri",
+            "description": "Christmas Day",
+            "state": "National",
+            "startDate": "2020-12-25",
+            "endDate": "2020-12-25",
+            "color": "#ff4a32"
+        },
+        {
+            "year": "2020",
+            "date": "27-Dec",
+            "day": "Sun",
+            "description": "Christmas Holiday",
+            "state": "Johor & Kedah",
+            "startDate": "2020-12-27",
+            "endDate": "2020-12-27",
+            "color": "#ff4a32"
+        }];
+        var ph_2021 = [
             {
                 "year": "2021",
                 "date": "1-Jan",
@@ -1067,9 +2260,118 @@
                 "endDate": "2021-12-25",
                 "color": "#ff4a32"
             }
-        ]
+        ];
 
-        var shA = [
+        var shA_2020 = [
+            {
+                "year": "2020",
+                "start": "1-Jan (Wed)",
+                "end": "",
+                "day": "",
+                "description": "First day of School",
+                "state": "National",
+                "startDate": "2020-01-01",
+                "endDate": "2020-01-01",
+                "color": "#9cb703"
+            },
+            {
+                "year": "2020",
+                "start": "13-Mar (Fri)",
+                "end": "21-Mar (Sat)",
+                "day": "",
+                "description": "Term 1",
+                "state": "National",
+                "startDate": "2020-03-13",
+                "endDate": "2020-03-21",
+                "color": "#9cb703"
+            }, {
+                "year": "2020",
+                "start": "22-May (Fri)",
+                "end": "06-Jun (Sat)",
+                "day": "",
+                "description": "Mid Year",
+                "state": "National",
+                "startDate": "2020-05-22",
+                "endDate": "2020-06-06",
+                "color": "#9cb703"
+            },
+            {
+                "year": "2020",
+                "start": "20-Aug (Thur)",
+                "end": "24-Aug (Mon)",
+                "day": "",
+                "description": "Term 2",
+                "state": "National",
+                "startDate": "2020-08-20",
+                "endDate": "2020-08-24",
+                "color": "#9cb703"
+            }, {
+                "year": "2020",
+                "start": "18-Dec (Fri)",
+                "end": "19-Jan (Tue)",
+                "day": "",
+                "description": "Year End",
+                "state": "National",
+                "startDate": "2020-12-18",
+                "endDate": "2021-01-19",
+                "color": "#9cb703"
+            }];
+
+        var shB_2020 = [{
+            "year": "2020",
+            "start": "2-Jan (Thur)",
+            "end": "",
+            "day": "",
+            "description": "First day of School",
+            "state": "National",
+            "startDate": "2020-01-02",
+            "endDate": "2020-01-02",
+            "color": "#9cb703"
+        },
+            {
+                "year": "2020",
+                "start": "14-Mar (Sat)",
+                "end": "22-Mar (Sun)",
+                "day": "",
+                "description": "Term 1",
+                "state": "National",
+                "startDate": "2020-03-14",
+                "endDate": "2020-03-22",
+                "color": "#9cb703"
+            }, {
+                "year": "2020",
+                "start": "23-May (Sat)",
+                "end": "07-Jun (Sun)",
+                "day": "",
+                "description": "Mid Year",
+                "state": "National",
+                "startDate": "2020-05-23",
+                "endDate": "2020-06-07",
+                "color": "#9cb703"
+            },
+            {
+                "year": "2020",
+                "start": "20-Aug (Thur)",
+                "end": "24-Aug (Mon)",
+                "day": "",
+                "description": "Term 2",
+                "state": "National",
+                "startDate": "2020-08-20",
+                "endDate": "2020-08-24",
+                "color": "#9cb703"
+            }, {
+                "year": "2020",
+                "start": "19-Dec (Sat)",
+                "end": "19-Jan (Tue)",
+                "day": "",
+                "description": "Year End",
+                "state": "National",
+                "startDate": "2020-12-19",
+                "endDate": "2021-01-19",
+                "color": "#9cb703"
+            }];
+
+        var shA_2021 = [
             {
                 "year": "2021",
                 "start": "20-Jan (Wed)",
@@ -1130,7 +2432,7 @@
                 "start": "10-Dec (Fri)",
                 "end": "31-Dec (Fri)",
                 "day": "",
-                "description": "End of Year",
+                "description": "Year End",
                 "state": "National",
                 "startDate": "2021-12-10",
                 "endDate": "2021-12-31",
@@ -1139,7 +2441,7 @@
 
         ]
 
-        var shB = [
+        var shB_2021 = [
             {
                 "year": "2021",
                 "start": "20-Jan (Wed)",
@@ -1211,11 +2513,12 @@
 
         $(document).ready(function () {
 
-            PopulateTable('ph');
+            //PopulateTable('ph');
 
             $(function () {
 
                 $('#calendar').calendar({
+                    style: 'background',
                     mouseOnDay: function (e) {
                     if (e.events.length > 0) {
                         var content = '';
@@ -1329,18 +2632,29 @@
             //$("#" + which).closest("li").css({ "color": "blue" });
             //$("#" + which).siblings("li").css({ "color": "#116466" });
 
+            var readData = [];
+            var ddlYear = $('#ddlYear').val();
+
             var myItems;
             var strBody = '', strHeader = '';
-
 
             if (which == 'ph') {
                 $('#phList thead').empty();
                 $('#phList tbody').empty();
 
+                
+
                 strHeader += '<tr><th>Date</th><th>Day</th><th>Holiday</th><th>State(s)</th></tr >';
                 $('#phList thead').append(strHeader);
 
-                $.each(ph, function (i, v) {
+                if (ddlYear == '2020') {
+                    readData = ph_2020;
+                }
+                else if (ddlYear == '2021') {
+                    readData = ph_2021;
+                }
+
+                $.each(readData, function (i, v) {
                     strBody += '<tr>';
                     strBody += '<td>' + v.date + '</td>';
                     strBody += '<td>' + v.day + '</td>';
@@ -1373,7 +2687,14 @@
                 strHeader += '<tr><th>Description</th><th>Start</th><th>End</th></tr>';
                 $('#shAList thead').append(strHeader);
 
-                $.each(shA, function (i, v) {
+                if (ddlYear == '2020') {
+                    readData = shA_2020;
+                }
+                else if (ddlYear == '2021') {
+                    readData = shA_2021;
+                }
+
+                $.each(readData, function (i, v) {
                     strBody += '<tr>';
                     strBody += '<td>' + v.description + '</td>';
                     strBody += '<td>' + v.start + '</td>';
@@ -1403,7 +2724,14 @@
                 strHeader += '<tr><th>Description</th><th>Start</th><th>End</th></tr>';
                 $('#shBList thead').append(strHeader);
 
-                $.each(shB, function (i, v) {
+                if (ddlYear == '2020') {
+                    readData = shB_2020;
+                }
+                else if (ddlYear == '2021') {
+                    readData = shB_2021;
+                }
+
+                $.each(readData, function (i, v) {
                     strBody += '<tr>';
                     strBody += '<td>' + v.description + '</td>';
                     strBody += '<td>' + v.start + '</td>';
@@ -1465,6 +2793,14 @@
             border-bottom: 2px solid transparent;
             border-left: 2px solid black;
         }
+
+        .box {
+            float: left;
+            width: 10px;
+            height: 10px;
+            margin: 2px;
+            border: 1px solid rgba(0, 0, 0, .2);
+        }
     </style>
 </head>
 
@@ -1475,7 +2811,7 @@
         <div class="container">
             <a class="navbar-brand" href="index.html">MY Calendar</a>
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
@@ -1486,48 +2822,48 @@
                         <a class="nav-link" href="demo2.html">Demo 2</a>
                     </li>
                     <!--<li class="nav-item">
-        <a class="nav-link" href="about.html">About</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="services.html">Services</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="contact.html">Contact</a>
-    </li>
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Portfolio
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-            <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
-            <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
-            <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
-            <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
-            <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
-        </div>
-    </li>
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Blog
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
-            <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
-            <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
-            <a class="dropdown-item" href="blog-post.html">Blog Post</a>
-        </div>
-    </li>
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Other Pages
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPages">
-            <a class="dropdown-item" href="full-width.html">Full Width Page</a>
-            <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
-            <a class="dropdown-item" href="faq.html">FAQ</a>
-            <a class="dropdown-item" href="404.html">404</a>
-            <a class="dropdown-item" href="pricing.html">Pricing Table</a>
-        </div>
-    </li>-->
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Portfolio
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                            <a class="dropdown-item" href="portfolio-1-col.html">1 Column Portfolio</a>
+                            <a class="dropdown-item" href="portfolio-2-col.html">2 Column Portfolio</a>
+                            <a class="dropdown-item" href="portfolio-3-col.html">3 Column Portfolio</a>
+                            <a class="dropdown-item" href="portfolio-4-col.html">4 Column Portfolio</a>
+                            <a class="dropdown-item" href="portfolio-item.html">Single Portfolio Item</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBlog" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Blog
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownBlog">
+                            <a class="dropdown-item" href="blog-home-1.html">Blog Home 1</a>
+                            <a class="dropdown-item" href="blog-home-2.html">Blog Home 2</a>
+                            <a class="dropdown-item" href="blog-post.html">Blog Post</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPages" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Other Pages
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPages">
+                            <a class="dropdown-item" href="full-width.html">Full Width Page</a>
+                            <a class="dropdown-item" href="sidebar.html">Sidebar Page</a>
+                            <a class="dropdown-item" href="faq.html">FAQ</a>
+                            <a class="dropdown-item" href="404.html">404</a>
+                            <a class="dropdown-item" href="pricing.html">Pricing Table</a>
+                        </div>
+                    </li>-->
                 </ul>
             </div>
         </div>
@@ -1547,18 +2883,31 @@
             <div class="col-sm-8">
                 <div class="col-sm-8" id="calendar"></div>
             </div>
+
+
             <div class="col-sm-4" id="ph-list">
+
+                <div class="form-group row" style="margin-top:30px">
+                    <label class="col-sm-2 col-form-label">Year</label>
+                    <div class="col-sm-10">
+                        <select id="ddlYear" class="form-control" onchange="PopulateTable('ph');">
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                        </select>
+                    </div>
+                </div>
                 <div id="accordion">
                     <div class="card">
                         <div class="card-header" id="headingOne">
                             <h5 class="mb-0">
                                 <button style="color:#ff4a32" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onclick="PopulateTable('ph');">
-                                    2021 Public Holiday
+                                    Public Holiday
                                 </button>
                             </h5>
                         </div>
 
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+
                             <div class="card-body">
                                 <table id="phList" class="table table-sm w-auto">
                                     <thead></thead>
@@ -1571,7 +2920,7 @@
                         <div class="card-header" id="headingTwo">
                             <h5 class="mb-0">
                                 <button style="color:#9cb703" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onclick="PopulateTable('shA');">
-                                    2021 School Holiday - Group A
+                                    School Holiday - Group A
                                 </button>
                             </h5>
                         </div>
@@ -1589,7 +2938,7 @@
                         <div class="card-header" id="headingThree">
                             <h5 class="mb-0">
                                 <button style="color:#9cb703" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" onclick="PopulateTable('shB');">
-                                    2021 School Holiday - Group B
+                                    School Holiday - Group B
                                 </button>
                             </h5>
                         </div>
@@ -1603,9 +2952,24 @@
                             </div>
                         </div>
                     </div>
+
+
+                    <p style="font-size: 11px">For School Holidays (Group A, B), please check lists above for the exact date.</p>
+
+
+                    <ul class="list-group" style="font-size:11px; border:none!important">
+                        <li class="list-group-item" style="border:none !important"><div class="box" style="background-color:#ff4a32"></div><span>Public Holidays</span></li>
+                        <li class="list-group-item" style="border:none !important"><div class="box" style="background-color:#9cb703"></div><span>School Holidays</span></li>
+
+
+
+                    </ul>
+
                 </div>
             </div>
         </div>
+
+
     </div>
 
     <!-- /.container -->
